@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('equipes', function (Blueprint $table) {
             $table->id('id_equipe');
-            $table->string('nom equipe');
-            $table->integer('nombre maximal users');
+            $table->string('nom_equipe');
+            $table->integer('nombre_maximal_users');
             $table->timestamps();
 
         });

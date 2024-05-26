@@ -10,6 +10,7 @@ use App\Http\Controllers\OperateurController;
 use App\Http\Controllers\SuperviseurController;
 use App\Http\Controllers\CoordinateurController;
 use App\Models\User;
+use App\Models\Equipe;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -26,30 +27,52 @@ use Illuminate\Support\Facades\Auth;
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('dashboardadmin', function () {
-        return view('admin/dashboardadmin');
+        return view('admin.dashboardadmin');
     })->name('dashboardadmin');
 });
 
 
 
 
-Route::get('/equipes',[EquipeController::class, 'index'])->name('equipes.index');
 
+
+
+
+
+
+
+
+
+// Route::get('/equipes',[EquipeController::class, 'index'])->name('equipes.index');
+
+// Route::get('/equipes/create', [EquipeController::class, 'create'])->name('equipes.create');
+
+// Route::post('/equipes', [EquipeController::class, 'store'])->name('equipes.store');
+
+// Route::get('/equipes/{equipe}', [EquipeController::class, 'show'])->name('equipes.show');
+
+// Route::get('/equipes/{equipe}/edit', [EquipeController::class, 'edit'])->name('equipes.edit');
+
+// Route::put('/equipes/{equipe}', [EquipeController::class, 'update'])->name('equipes.update');
+
+// Route::delete('/equipes/{equipe}',[EquipeController::class, 'destroy'])->name('equipes.destroy');
+
+
+
+
+Route::get('/equipes', [EquipeController::class, 'index'])->name('equipes.index');
 Route::get('/equipes/create', [EquipeController::class, 'create'])->name('equipes.create');
-
 Route::post('/equipes', [EquipeController::class, 'store'])->name('equipes.store');
-
 Route::get('/equipes/{equipe}', [EquipeController::class, 'show'])->name('equipes.show');
-
 Route::get('/equipes/{equipe}/edit', [EquipeController::class, 'edit'])->name('equipes.edit');
-
 Route::put('/equipes/{equipe}', [EquipeController::class, 'update'])->name('equipes.update');
+Route::delete('/equipes/{equipe}', [EquipeController::class, 'destroy'])->name('equipes.destroy');
 
-Route::delete('/equipes/{equipe}',[EquipeController::class, 'destroy'])->name('equipes.destroy');
+Route::get('/creerequipe', [EquipeController::class, 'createEquipe'])->name('creerequipe');
 
-
-
-
+Route::get('/creercoordinateur', function () {
+    return view('creercoordinateur');
+})->name('creercoordinateur') ;
 
 
 
@@ -127,46 +150,24 @@ Route::prefix('superviseur')->group(function () {
 
 
 
-Route::get('/creerequipe', function () {
-    return view('admin/creerequipe');
-})->name('creerequipe');;
-
-Route::get('/creercoordinateur', function () {
-    return view('admin/creercoordinateur');
-})->name('creercoordinateur');;
-
-Route::get('/creeroperateur', function () {
-    return view('coordinateur/creeroperateur');
-});
-
-Route::get('/creersuperviseur', function () {
-    return view('coordinateur/creersuperviseur');
-});
-
-Route::get('/creerreclamation', function () {
-    return view('operateur/creerreclamation');
-});
-
-Route::get('/traitereclamation', function () {
-    return view('superviseur/traitereclamation');
-});
+// Route::get('/creerequipe', [EquipeController::class, 'createEquipe'])->name('creerequipe');
 
 
 
 
 
-Route::get('/posts',[AdminController::class, 'index'])->name('posts.index');
+// Route::get('/posts',[AdminController::class, 'index'])->name('posts.index');
 
-Route::get('/posts',[AdminController::class, 'index'])->name('posts.index');
+// Route::get('/posts',[AdminController::class, 'index'])->name('posts.index');
 
-Route::get('/posts/create', [AdminController::class, 'create'])->name('posts.create');
+// Route::get('/posts/create', [AdminController::class, 'create'])->name('posts.create');
 
-Route::post('/posts', [AdminController::class, 'store'])->name('posts.store');
+// Route::post('/posts', [AdminController::class, 'store'])->name('posts.store');
 
-Route::get('/posts/{post}', [AdminController::class, 'show'])->name('posts.show');
+// Route::get('/posts/{post}', [AdminController::class, 'show'])->name('posts.show');
 
-Route::get('/posts/{post}/edit', [AdminController::class, 'edit'])->name('posts.edit');
+// Route::get('/posts/{post}/edit', [AdminController::class, 'edit'])->name('posts.edit');
 
-Route::put('/posts/{post}', [AdminController::class, 'update'])->name('posts.update');
+// Route::put('/posts/{post}', [AdminController::class, 'update'])->name('posts.update');
 
-Route::delete('/posts/{post}',[AdminController::class, 'destroy'])->name('posts.destroy');
+// Route::delete('/posts/{post}',[AdminController::class, 'destroy'])->name('posts.destroy');
