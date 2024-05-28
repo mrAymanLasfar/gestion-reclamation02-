@@ -171,3 +171,9 @@ Route::prefix('superviseur')->group(function () {
 // Route::put('/posts/{post}', [AdminController::class, 'update'])->name('posts.update');
 
 // Route::delete('/posts/{post}',[AdminController::class, 'destroy'])->name('posts.destroy');
+
+
+
+
+
+// hada ghir comment bax ntesti wa7d l7aja
