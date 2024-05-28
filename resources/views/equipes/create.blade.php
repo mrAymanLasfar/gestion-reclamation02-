@@ -78,10 +78,10 @@
             <label class="form-label"> nombre maximal users</label>
             <input name="title" type="number" class="form-control" value="{{old('title')}}">
         </div>
-        <div class="mb-3">
+        {{-- <div class="mb-3">
             <label  class="form-label">Description</label>
             <textarea name="description" class="form-control"  rows="3">{{old('description')}}</textarea>
-        </div>
+        </div> --}}
 
         {{-- <div class="mb-3">
             <label  class="form-label">Post Creator</label>
