@@ -53,7 +53,7 @@
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard admin') }}
+            {{ __('Creer equipes') }}
         </h2>
     </x-slot>
 
@@ -71,12 +71,16 @@
     <form method="POST" action="{{route('equipes.store')}}">
         @csrf
         <div class="mb-3">
+            <label class="form-label">id equipe</label>
+            <input name="id_equipe" type="text" class="form-control" value="{{old('id_equipe')}}">
+        </div>
+        <div class="mb-3">
             <label class="form-label">nom equipe</label>
-            <input name="title" type="text" class="form-control" value="{{old('title')}}">
+            <input name="nom_equipe" type="text" class="form-control" value="{{old('nom_equipe')}}">
         </div>
         <div class="mb-3">
             <label class="form-label"> nombre maximal users</label>
-            <input name="title" type="number" class="form-control" value="{{old('title')}}">
+            <input name="nombre_maximal_users" type="number" class="form-control" value="{{old('nombre_maximal_users')}}">
         </div>
         {{-- <div class="mb-3">
             <label  class="form-label">Description</label>

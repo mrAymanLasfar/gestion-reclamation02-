@@ -93,6 +93,5 @@
         @endforeach
         </tbody>
     </table>
-{{-- @endsection --}}
 
 </x-layouts.app>

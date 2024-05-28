@@ -10,8 +10,8 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <div>
-                        <a href="{{ route('creerequipe') }}" class="btn btn-primary">Créer Équipe</a> <br>
-                        <a href="{{ route('creercoordinateur') }}" class="btn btn-primary">Créer Coordinateur</a>
+                        <a href="{{ route('creerequipe') }}" class="btn btn-primary">Voir les Équipe</a> <br>
+                        <a href="{{ route('creercoordinateur') }}" class="btn btn-primary">Voir les Coordinateur</a>
                     </div>
                 </div>
             </div>

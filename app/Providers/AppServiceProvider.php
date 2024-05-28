@@ -25,5 +25,6 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         Blade::component('layouts.app', 'layouts.app');
+        Blade::component('layouts.navigation', 'layouts.navigation');
     }
 }

@@ -25,19 +25,14 @@ use Illuminate\Support\Facades\Auth;
 */
 
 
+
+
+
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('dashboardadmin', function () {
         return view('admin.dashboardadmin');
     })->name('dashboardadmin');
 });
-
-
-
-
-
-
-
-
 
 
 
@@ -56,7 +51,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
 // Route::put('/equipes/{equipe}', [EquipeController::class, 'update'])->name('equipes.update');
 
 // Route::delete('/equipes/{equipe}',[EquipeController::class, 'destroy'])->name('equipes.destroy');
-
 
 
 
@@ -173,7 +167,3 @@ Route::prefix('superviseur')->group(function () {
 // Route::delete('/posts/{post}',[AdminController::class, 'destroy'])->name('posts.destroy');
 
 
-
-
-
-// hada ghir comment bax ntesti wa7d l7aja

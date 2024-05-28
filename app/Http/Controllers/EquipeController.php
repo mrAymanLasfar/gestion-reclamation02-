@@ -126,9 +126,9 @@ class EquipeController extends Controller
     {
         $request->validate([
 
-            'id_equipe' => ['required', 'min:3'],
+            'id_equipe' => ['required'],
             'nom_equipe' => ['required', 'min:3'],
-            'nombre_maximal_users' => ['required', 'min:3'],
+            'nombre_maximal_users' => ['required'],
         ]);
 
         Equipe::create([
@@ -148,9 +148,9 @@ class EquipeController extends Controller
     public function update(Request $request, Equipe $equipe)
     {
         $request->validate([
-            'id_equipe' => ['required', 'min:3'],
+            'id_equipe' => ['required'],
             'nom_equipe' => ['required', 'min:3'],
-            'nombre_maximal_users' => ['required', 'min:3'],
+            'nombre_maximal_users' => ['required'],
         ]);
 
         $equipe->update([
@@ -162,10 +162,15 @@ class EquipeController extends Controller
         return redirect()->route('equipes.show', $equipe);
     }
 
-    public function destroy(Equipe $equipe)
+    public function destroy($id_equipe)
     {
+        $equipe = Equipe::find($id_equipe);
         $equipe->delete();
-        return redirect()->route('equipes.index');
+
+        Equipe::where('id_equipe', $id_equipe)->delete();
+
+        //2- redirect to posts.index
+        return to_route('equipes.index');
     }
 
     public function createEquipe()
