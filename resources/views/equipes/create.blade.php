@@ -82,6 +82,14 @@
             <label class="form-label"> nombre maximal users</label>
             <input name="nombre_maximal_users" type="number" class="form-control" value="{{old('nombre_maximal_users')}}">
         </div>
+        <div class="mb-3">
+            <label  class="form-label">Coodinateur</label>
+            <select name="coordinateur_d_equipe" class="form-control">
+                @foreach($coordinateurs as $coordinateur)
+                    <option value="{{$coordinateur->id}}">{{$coordinateur->name}}</option>
+                @endforeach
+            </select>
+        </div>
         {{-- <div class="mb-3">
             <label  class="form-label">Description</label>
             <textarea name="description" class="form-control"  rows="3">{{old('description')}}</textarea>

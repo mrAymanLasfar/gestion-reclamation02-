@@ -11,6 +11,7 @@ use App\Http\Controllers\SuperviseurController;
 use App\Http\Controllers\CoordinateurController;
 use App\Models\User;
 use App\Models\Equipe;
+use App\Models\Coordinateur;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -33,6 +34,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
         return view('admin.dashboardadmin');
     })->name('dashboardadmin');
 });
+
+
 
 
 
@@ -64,9 +67,19 @@ Route::delete('/equipes/{equipe}', [EquipeController::class, 'destroy'])->name('
 
 Route::get('/creerequipe', [EquipeController::class, 'createEquipe'])->name('creerequipe');
 
-Route::get('/creercoordinateur', function () {
-    return view('creercoordinateur');
-})->name('creercoordinateur') ;
+
+
+Route::get('/coordinateurs', [CoordinateurController::class, 'index'])->name('coordinateurs.index');
+Route::get('/coordinateurs/create', [CoordinateurController::class, 'create'])->name('coordinateurs.create');
+Route::post('/coordinateurs', [CoordinateurController::class, 'store'])->name('coordinateurs.store');
+Route::get('/coordinateurs/{coordinateur}', [CoordinateurController::class, 'show'])->name('coordinateurs.show');
+Route::get('/coordinateurs/{coordinateur}/edit', [CoordinateurController::class, 'edit'])->name('coordinateurs.edit');
+Route::put('/coordinateurs/{coordinateur}', [CoordinateurController::class, 'update'])->name('coordinateurs.update');
+Route::delete('/coordinateurs/{coordinateur}', [CoordinateurController::class, 'destroy'])->name('coordinateurs.destroy');
+
+Route::get('/creercoordinateur', [CoordinateurController::class, 'createCoordinateur'])->name('creercoordinateur');
+
+
 
 
 
@@ -79,19 +92,19 @@ Route::get('/test00', function () {
 Mail::to('02012004.al@gmail.com')->send(new Testmail);
 });
 
+
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/test', function () {
-   
-$user = User::find(1);
 
+
+Route::get('/test', function () {
+$user = User::find(1);
 if ($user->hasRole('admin')) {
     echo 'User is an admin';
 } else {
     echo 'User is not an admin';
 }
-
 });
 
 Route::get('/dashboard', function () {
@@ -115,10 +128,10 @@ require __DIR__.'/auth.php';
 
 
 
-Route::prefix('admin')->group(function () {
-    Route::get('/creercoordinateur', [AdminController::class, 'creercoordinateur']);
-    Route::get('/creerequipe', [AdminController::class, 'creerequipe']);
-});
+// Route::prefix('admin')->group(function () {
+//     Route::get('/creercoordinateur', [AdminController::class, 'creercoordinateur']);
+//     Route::get('/creerequipe', [AdminController::class, 'creerequipe']);
+// });
 
 Route::prefix('coordinateur')->group(function () {
     Route::get('/creeroperateur', [CoordinateurController::class, 'creeroperateur']);

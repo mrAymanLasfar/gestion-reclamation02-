@@ -15,6 +15,7 @@ class Equipe extends Model
         'id_equipe',
         'nom_equipe',
         'nombre_maximal_users',
+        'coordinateur_d_equipe',
         'created_at',
         'updated_at',
     ];
