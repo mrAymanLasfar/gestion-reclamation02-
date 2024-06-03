@@ -41,16 +41,16 @@ class UtilisateurSeeder extends Seeder
     public function run()
     {
         $userAdmin = User::factory()->create([
-            'name' => 'admin4',
-            'email' => 'admin4@gmail.com',
-            'password' => Hash::make('admin4@gmail.com'),
+            'name' => 'coordinat3',
+            'email' => 'coordinat3@gmail.com',
+            'password' => Hash::make('coordinat3@gmail.com'),
         ]);
 
         
-        if (\Spatie\Permission\Models\Role::where('name', 'admin')->exists()) {
-            $userAdmin->assignRole('admin');
+        if (\Spatie\Permission\Models\Role::where('name', 'coordinateur')->exists()) {
+            $userAdmin->assignRole('coordinateur');
         } else {
-            echo "Role 'admin' does not exist.\n";
+            echo "Role 'coordinateur' does not exist.\n";
         }
     }
 }

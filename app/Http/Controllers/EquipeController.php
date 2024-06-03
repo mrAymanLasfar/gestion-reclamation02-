@@ -99,6 +99,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Coordinateur;
 use App\Models\Equipe;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class EquipeController extends Controller
@@ -114,32 +115,64 @@ class EquipeController extends Controller
         return view('equipes.show', ['equipe' => $equipe]);
     }
 
+    // public function create()
+    // {
+    //     $coordinateurs = Coordinateur::all();
+
+    //     return view('equipes.create', ['coordinateurs' => $coordinateurs]);
+    // }
+
     public function create()
     {
-        $coordinateurs = Coordinateur::all();
-
-        return view('equipes.create', ['coordinateurs' => $coordinateurs]);
+        // Fetch users who have the 'coordinateur' role
+        $coordinateurRoleId = 3; // Assuming 'coordinateur' role has id 3
+        $coordinateurs = User::join('model_has_roles', 'users.id', '=', 'model_has_roles.model_id')
+                             ->where('model_has_roles.role_id', $coordinateurRoleId)
+                             ->where('model_has_roles.model_type', User::class)
+                             ->select('users.*')
+                             ->get();
+    
+        return view('equipes.create', compact('coordinateurs'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
-
-            'id_equipe' => ['required'],
-            'nom_equipe' => ['required', 'min:3'],
-            'nombre_maximal_users' => ['required'],
-            'coordinateur_d_equipe' => ['required', 'exists:coordinateurs,id_coordinateur'],
+            'id_equipe' => 'required',
+            'nom_equipe' => 'required|min:3',
+            'nombre_maximal_users' => 'required|integer',
+            'id_coordinateur' => 'required|exists:users,id',
         ]);
 
         Equipe::create([
             'id_equipe' => $request->id_equipe,
             'nom_equipe' => $request->nom_equipe,
             'nombre_maximal_users' => $request->nombre_maximal_users,
-            'coordinateur_d_equipe' => $request->coordinateur_d_equipe,
+            'id_coordinateur' => $request->id_coordinateur,
         ]);
 
         return redirect()->route('equipes.index');
     }
+
+    // public function store(Request $request)
+    // {
+    //     $request->validate([
+
+    //         'id_equipe' => ['required'],
+    //         'nom_equipe' => ['required', 'min:3'],
+    //         'nombre_maximal_users' => ['required'],
+    //         'coordinateur_d_equipe' => ['required', 'exists:coordinateurs,id_coordinateur'],
+    //     ]);
+
+    //     Equipe::create([
+    //         'id_equipe' => $request->id_equipe,
+    //         'nom_equipe' => $request->nom_equipe,
+    //         'nombre_maximal_users' => $request->nombre_maximal_users,
+    //         'coordinateur_d_equipe' => $request->coordinateur_d_equipe,
+    //     ]);
+
+    //     return redirect()->route('equipes.index');
+    // }
 
     public function edit(Equipe $equipe)
     {

@@ -79,7 +79,7 @@ Route::delete('/coordinateurs/{coordinateur}', [CoordinateurController::class, '
 
 Route::get('/creercoordinateur', [CoordinateurController::class, 'createCoordinateur'])->name('creercoordinateur');
 
-
+Route::resource('coordinateurs', CoordinateurController::class);
 
 
 
