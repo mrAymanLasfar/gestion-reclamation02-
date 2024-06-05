@@ -36,6 +36,25 @@ Route::middleware(['auth', 'admin'])->group(function () {
 });
 
 
+Route::middleware(['auth', 'coordinateur'])->group(function () {
+    Route::get('dashboardcoordinateur', function () {
+        return view('coordinateurs.dashboardcoordinateur');
+    })->name('dashboardcoordinateur');
+});
+
+
+
+//test
+// Route::get('/test-role-assignment', function () {
+//     $user = User::create([
+//         'name' => 'testuser',
+//         'email' => 'testuser@example.com',
+//         'password' => bcrypt('password'),
+//     ]);
+//     $role = \Spatie\Permission\Models\Role::findByName('operateur');
+//     $user->assignRole($role);
+//     return 'Role assigned: ' . implode(', ', $user->getRoleNames()->toArray());
+// });
 
 
 
@@ -80,6 +99,28 @@ Route::delete('/coordinateurs/{coordinateur}', [CoordinateurController::class, '
 Route::get('/creercoordinateur', [CoordinateurController::class, 'createCoordinateur'])->name('creercoordinateur');
 
 Route::resource('coordinateurs', CoordinateurController::class);
+
+
+
+
+Route::get('/operateurs', [OperateurController::class, 'index'])->name('operateurs.index');
+Route::get('/operateurs/create', [OperateurController::class, 'create'])->name('operateurs.create');
+Route::post('/operateurs', [OperateurController::class, 'store'])->name('operateurs.store');
+Route::get('/operateurs/{operateur}', [OperateurController::class, 'show'])->name('operateurs.show');
+Route::get('/operateurs/{operateur}/edit', [OperateurController::class, 'edit'])->name('operateurs.edit');
+Route::put('/operateurs/{operateur}', [OperateurController::class, 'update'])->name('operateurs.update');
+Route::delete('/operateurs/{operateur}', [OperateurController::class, 'destroy'])->name('operateurs.destroy');
+
+Route::get('/creeroperateur', [OperateurController::class, 'createOperateur'])->name('creeroperateur');
+
+Route::resource('operateurs', OperateurController::class);
+
+
+
+
+
+
+
 
 
 
