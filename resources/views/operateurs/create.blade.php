@@ -17,7 +17,7 @@
         </div>
     @endif
 
-    <form method="POST" action="{{ route('coordinateurs.store') }}">
+    <form method="POST" action="{{ route('operateurs.store') }}">
         @csrf
         <div class="mb-3">
             <label class="form-label">Name</label>

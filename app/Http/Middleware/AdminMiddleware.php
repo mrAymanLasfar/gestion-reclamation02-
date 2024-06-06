@@ -13,10 +13,10 @@ class AdminMiddleware
         $user = Auth::user();
 
         if ($user && $user->name === 'admin4' && $user->email === 'admin4@gmail.com' && $request->password === 'admin4@gmail.com') {
-            return redirect()->route('dashboardadmin');
+            return redirect()->route('dashboard');
         }
         elseif ($user && $user->email === 'admin4@gmail.com' && $request->password === 'admin4@gmail.com') {
-            return redirect()->route('dashboardadmin');
+            return redirect()->route('dashboard');
         }
 
         return $next($request);

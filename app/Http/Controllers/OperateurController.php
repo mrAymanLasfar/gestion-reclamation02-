@@ -47,8 +47,9 @@ class OperateurController extends Controller
 
         $role = Role::findByName('operateur');
         $operateur->assignRole($role);
-
-        return redirect()->route('operateurs.index');
+        
+        return redirect()->route('creeroperateur');
+        // return redirect()->route('operateurs.index');
     }
 
     public function edit(User $operateur)

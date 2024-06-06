@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -38,10 +39,9 @@ class CoordinateurController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
-        $role = Role::findByName('coordinateur');
-        $coordinateur->assignRole($role);
+        $coordinateur->assignRole('coordinateur');
 
-        return redirect()->route('coordinateurs.index');
+        return redirect()->route('creercoordinateur');
     }
 
     public function edit(User $coordinateur)
@@ -74,15 +74,14 @@ class CoordinateurController extends Controller
 
     public function createCoordinateur()
     {
-        $coordinateurs = User::role('coordinateur')->get();
+        $coordinateurs = User::Role('coordinateur')->get();
         return view('admin.creercoordinateur', compact('coordinateurs'));
     }
 
     public function assignRoleToCoordinateur($coordinateurId, $roleName)
     {
         $coordinateur = User::findOrFail($coordinateurId);
-        $role = Role::findByName($roleName);
-        $coordinateur->assignRole($role);
+        $coordinateur->assignRole($roleName);
     }
 
     public function creeroperateur()
@@ -95,6 +94,119 @@ class CoordinateurController extends Controller
         return view('coordinateur.creersuperviseur');
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// namespace App\Http\Controllers;
+
+// use Illuminate\Http\Request;
+// use App\Models\User;
+// use Spatie\Permission\Models\Role;
+
+// class CoordinateurController extends Controller 
+// {
+//     public function index()
+//     {
+//         $coordinateurs = User::role('coordinateur')->get();
+//         return view('coordinateurs.index', compact('coordinateurs'));
+//     }
+
+//     public function show(User $coordinateur)
+//     {
+//         return view('coordinateurs.show', ['coordinateur' => $coordinateur]);
+//     }
+
+//     public function create()
+//     {
+//         return view('coordinateurs.create');
+//     }
+
+//     public function store(Request $request)
+//     {
+//         $request->validate([
+//             'name' => ['required', 'min:3'],
+//             'email' => ['required', 'email', 'unique:users,email'],
+//             'password' => ['required', 'min:6'],
+//         ]);
+
+//         $coordinateur = User::create([
+//             'name' => $request->name,
+//             'email' => $request->email,
+//             'password' => bcrypt($request->password),
+//         ]);
+
+//         $role = Role::findByName('coordinateur');
+//         $coordinateur->assignRole($role);
+
+//         return redirect()->route('creercoordinateur');
+//     }
+
+//     public function edit(User $coordinateur)
+//     {
+//         return view('coordinateurs.edit', ['coordinateur' => $coordinateur]);
+//     }
+
+//     public function update(Request $request, User $coordinateur)
+//     {
+//         $request->validate([
+//             'name' => ['required', 'min:3'],
+//             'email' => ['required', 'email', 'unique:users,email,' . $coordinateur->id],
+//             'password' => ['nullable', 'min:6'],
+//         ]);
+
+//         $coordinateur->update([
+//             'name' => $request->name,
+//             'email' => $request->email,
+//             'password' => $request->password ? bcrypt($request->password) : $coordinateur->password,
+//         ]);
+
+//         return redirect()->route('coordinateurs.show', $coordinateur->id);
+//     }
+
+//     public function destroy(User $coordinateur)
+//     {
+//         $coordinateur->delete();
+//         return redirect()->route('coordinateurs.index');
+//     }
+
+//     public function createCoordinateur()
+//     {
+//         $coordinateurs = User::role('coordinateur')->get();
+//         return view('admin.creercoordinateur', compact('coordinateurs'));
+//     }
+
+//     public function assignRoleToCoordinateur($coordinateurId, $roleName)
+//     {
+//         $coordinateur = User::findOrFail($coordinateurId);
+//         $role = Role::findByName($roleName);
+//         $coordinateur->assignRole($role);
+//     }
+
+//     public function creeroperateur()
+//     {
+//         return view('coordinateur.creeroperateur');
+//     }
+
+//     public function creersuperviseur()
+//     {
+//         return view('coordinateur.creersuperviseur');
+//     }
+// }
 
 
 

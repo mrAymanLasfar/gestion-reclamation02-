@@ -14,6 +14,7 @@ use App\Models\Equipe;
 use App\Models\Coordinateur;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
+use App\Providers\RouteServiceProvider;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,12 +29,33 @@ use Illuminate\Support\Facades\Auth;
 
 
 
-
-Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('dashboardadmin', function () {
+// Routes for admin users
+Route::middleware(['auth', 'admin.redirect'])->group(function () {
+    Route::get('/dashboardadmin', function () {
         return view('admin.dashboardadmin');
     })->name('dashboardadmin');
 });
+
+// Routes for authenticated and verified users
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
+
+
+
+
+
+
+
+
+// Route::middleware(['auth', 'admin'])->group(function () {
+//     Route::get('dashboardadmin', function () {
+//         return view('admin.dashboardadmin');
+//     })->name('dashboardadmin');
+// });
+
 
 
 Route::middleware(['auth', 'coordinateur'])->group(function () {
@@ -88,6 +110,8 @@ Route::get('/creerequipe', [EquipeController::class, 'createEquipe'])->name('cre
 
 
 
+
+
 Route::get('/coordinateurs', [CoordinateurController::class, 'index'])->name('coordinateurs.index');
 Route::get('/coordinateurs/create', [CoordinateurController::class, 'create'])->name('coordinateurs.create');
 Route::post('/coordinateurs', [CoordinateurController::class, 'store'])->name('coordinateurs.store');
@@ -113,7 +137,7 @@ Route::delete('/operateurs/{operateur}', [OperateurController::class, 'destroy']
 
 Route::get('/creeroperateur', [OperateurController::class, 'createOperateur'])->name('creeroperateur');
 
-Route::resource('operateurs', OperateurController::class);
+// Route::resource('operateurs', OperateurController::class);
 
 
 
@@ -147,6 +171,9 @@ if ($user->hasRole('admin')) {
     echo 'User is not an admin';
 }
 });
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
