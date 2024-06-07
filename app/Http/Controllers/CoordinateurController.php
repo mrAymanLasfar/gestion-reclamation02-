@@ -76,20 +76,30 @@ class CoordinateurController extends Controller
     {
        // $coordinateurs = User::Role('coordinateur')->get();
        // return view('admin.creercoordinateur', compact('coordinateurs'));
-     
+      // $coordinateurs = Role::where('name', 'coordinateur')->first()->users;
+      // return view('admin.creercoordinateur', compact('coordinateurs'));
 
 
       // Recherchez le rôle "coordinateur"
-    $role = Role::where('name', 'coordinateur')->first();
+    
 
-    // Vérifiez si le rôle a été trouvé
-    if ($role) {
-        // Si le rôle existe, récupérez les utilisateurs associés
-        $coordinateurs = $role->users;
-        return view('admin.creercoordinateur', compact('coordinateurs'));
-        
-   
-    }
+   // $role = Role::where('name', 'coordinateur')->first();
+    //return view('admin.creercoordinateur', compact('coordinateurs'));
+
+    
+      // Recherchez le rôle "coordinateur"
+      $role = Role::where('name', 'coordinateur')->first();
+
+      // Définir la variable $coordinateurs
+      $coordinateurs = [];
+  
+      if ($role) {
+          // Si le rôle existe, récupérez les utilisateurs associés
+          $coordinateurs = $role->users;
+      }
+  
+      // Passer la variable $coordinateurs à la vue
+      return view('admin.creercoordinateur', compact('coordinateurs'));
     }
 
     public function assignRoleToCoordinateur($coordinateurId, $roleName)
