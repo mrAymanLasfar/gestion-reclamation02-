@@ -25,6 +25,44 @@ class CoordinateurController extends Controller
         return view('coordinateurs.create');
     }
 
+
+
+    // public function store(Request $request)
+    // {
+    //     // Validate the request data
+    //     $request->validate([
+    //         'name' => ['required', 'min:3'],
+    //         'email' => ['required', 'email', 'unique:users,email'],
+    //         'password' => ['required', 'min:6'],
+    //     ]);
+
+    //     // Check if the role 'coordinateur' exists
+    //     if (!Role::where('name', 'coordinateur')->exists()) {
+    //         return redirect()->back()->withErrors(['Role "coordinateur" does not exist.']);
+    //     }
+
+    //     // Create the user
+    //     $coordinateur = User::create([
+    //         'name' => $request->name,
+    //         'email' => $request->email,
+    //         'password' => bcrypt($request->password),
+    //     ]);
+
+    //     // Assign the role to the user
+    //     $coordinateur->assignRole('coordinateur');
+
+    //     // Ensure the role assignment was successful
+    //     if (!$coordinateur->hasRole('coordinateur')) {
+    //         return redirect()->back()->withErrors(['Failed to assign role "coordinateur".']);
+    //     }
+
+    //     // Redirect to the 'creercoordinateur' route
+    //     return redirect()->route('creercoordinateur');
+    // }
+
+
+    
+
     public function store(Request $request)
     {
         $request->validate([
@@ -43,6 +81,11 @@ class CoordinateurController extends Controller
 
         return redirect()->route('creercoordinateur');
     }
+
+
+
+
+    
 
     public function edit(User $coordinateur)
     {
