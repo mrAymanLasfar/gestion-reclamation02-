@@ -143,6 +143,16 @@ Route::get('/creeroperateur', [OperateurController::class, 'createOperateur'])->
 
 
 
+Route::get('/superviseurs', [SuperviseurController::class, 'index'])->name('superviseurs.index');
+Route::get('/superviseurs/create', [SuperviseurController::class, 'create'])->name('superviseurs.create');
+Route::post('/superviseurs', [SuperviseurController::class, 'store'])->name('superviseurs.store');
+Route::get('/superviseurs/{superviseur}', [SuperviseurController::class, 'show'])->name('superviseurs.show');
+Route::get('/superviseurs/{superviseur}/edit', [SuperviseurController::class, 'edit'])->name('superviseurs.edit');
+Route::put('/superviseurs/{superviseur}', [SuperviseurController::class, 'update'])->name('superviseurs.update');
+Route::delete('/superviseurs/{superviseur}', [SuperviseurController::class, 'destroy'])->name('superviseurs.destroy');
+
+Route::get('/creersuperviseur', [SuperviseurController::class, 'createSuperviseur'])->name('creersuperviseur');
+
 
 
 

@@ -13,7 +13,7 @@
                 <div class="p-6 text-gray-900">
                     <div>
                         <a href="{{ route('creeroperateur') }}" class="btn btn-primary">Voir les Operateurs</a> <br>
-                        {{-- <a href="{{ route('creersupeviseur') }}" class="btn btn-primary">Voir les Supeviseurs</a> --}}
+                        <a href="{{ route('creersuperviseur') }}" class="btn btn-primary">Voir les Superviseurs</a>
                     </div>
                 </div>
             </div>
