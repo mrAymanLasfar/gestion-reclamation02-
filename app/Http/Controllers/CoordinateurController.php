@@ -6,13 +6,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\DB;
 
 class CoordinateurController extends Controller 
 {
     public function index()
     {
-        $coordinateurs = User::role('coordinateur')->get();
-        return view('coordinateurs.index', compact('coordinateurs'));
+         // Fetch users with the 'coordinateur' role using Eloquent
+         $coordinateurs = User::whereHas('roles', function ($query) {
+            $query->where('name', 'coordinateur');
+        })->get();
+
+        return view('admin.creercoordinateur', compact('coordinateurs'));
     }
 
     public function show(User $coordinateur)

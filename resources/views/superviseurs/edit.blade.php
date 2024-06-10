@@ -5,20 +5,20 @@
             {{ __('Editer Operateur') }}
         </h2>
     </x-slot>
-    <form method="POST" action="{{ route('operateurs.update', $operateur->id) }}">
+    <form method="POST" action="{{ route('operateurs.update', $superviseur->id) }}">
         @csrf
         @method('PUT')
         <div class="mb-3">
             <label class="form-label">ID operateur</label>
-            <input name="id" type="text" value="{{ $operateur->id }}" class="form-control" readonly>
+            <input name="id" type="text" value="{{ $superviseur->id }}" class="form-control" readonly>
         </div>
         <div class="mb-3">
             <label class="form-label">Nom operateur</label>
-            <input name="name" type="text" value="{{ $operateur->name }}" class="form-control">
+            <input name="name" type="text" value="{{ $superviseur->name }}" class="form-control">
         </div>
         <div class="mb-3">
             <label class="form-label">Email operateur</label>
-            <input name="email" type="email" value="{{ $operateur->email }}" class="form-control">
+            <input name="email" type="email" value="{{ $superviseur->email }}" class="form-control">
         </div>
         <div class="mb-3">
             <label class="form-label">Password operateur</label>

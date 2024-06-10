@@ -77,7 +77,7 @@ class OperateurController extends Controller
     public function destroy(User $operateur)
     {
         $operateur->delete();
-        return redirect()->route('coordinateurs.creeroperateur');
+        return redirect()->route('creeroperateur');
     }
 
     public function createOperateur()
@@ -95,12 +95,12 @@ class OperateurController extends Controller
 
     public function creeroperateur()
     {
-        return view('operateur.creeroperateur');
+        return view('creeroperateur');
     }
 
     public function creersuperviseur()
     {
-        return view('operateur.creersuperviseur');
+        return view('creersuperviseur');
     }
 }
 
