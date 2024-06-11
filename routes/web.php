@@ -29,12 +29,59 @@ use App\Providers\RouteServiceProvider;
 
 
 
-// Routes for admin users
-Route::middleware(['auth', 'admin.redirect'])->group(function () {
+
+// Route::middleware(['auth', 'dashadminredirect'])->group(function () {
+//     Route::get('/dashboardadmin', function () {
+//         return view('admin.dashboardadmin');
+//     })->name('dashboardadmin');
+// });
+
+
+// Route::middleware(['auth', 'dashadminredirect'])->group(function () {
+//     Route::get('dashboardcoordinateur', function () {
+//         return view('coordinateurs.dashboardcoordinateur');
+//     })->name('dashboardcoordinateur');
+// });
+
+
+// Route::middleware(['auth', 'dashadminredirect'])->group(function () {
+//     Route::get('dashboardsuperviseur', function () {
+//         return view('superviseurs.dashboardsuperviseur');
+//     })->name('dashboardsuperviseur');
+// });
+
+
+// Route::middleware(['auth', 'dashadminredirect'])->group(function () {
+//     Route::get('dashboardoperateur', function () {
+//         return view('operateurs.dashboardoperateur');
+//     })->name('dashboardoperateur');
+// });
+
+
+
+
+Route::middleware(['auth', 'user.redirect'])->group(function () {
     Route::get('/dashboardadmin', function () {
         return view('admin.dashboardadmin');
     })->name('dashboardadmin');
+
+    Route::get('/dashboardcoordinateur', function () {
+        return view('coordinateurs.dashboardcoordinateur');
+    })->name('dashboardcoordinateur');
+
+    Route::get('/dashboardsuperviseur', function () {
+        return view('superviseurs.dashboardsuperviseur');
+    })->name('dashboardsuperviseur');
+
+    Route::get('/dashboardoperateur', function () {
+        return view('operateurs.dashboardoperateur');
+    })->name('dashboardoperateur');
 });
+
+
+
+
+
 
 // Routes for authenticated and verified users
 Route::middleware(['auth', 'verified'])->group(function () {
@@ -58,11 +105,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 
 
-Route::middleware(['auth', 'coordinateur'])->group(function () {
-    Route::get('dashboardcoordinateur', function () {
-        return view('coordinateurs.dashboardcoordinateur');
-    })->name('dashboardcoordinateur');
-});
+// Route::middleware(['auth', 'coordinateur'])->group(function () {
+//     Route::get('dashboardcoordinateur', function () {
+//         return view('coordinateurs.dashboardcoordinateur');
+//     })->name('dashboardcoordinateur');
+// });
 
 
 

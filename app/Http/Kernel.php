@@ -53,10 +53,15 @@ class Kernel extends HttpKernel
      * @var array<string, class-string|string>
      */
     protected $routeMiddleware = [
-        'admin.redirect' => \App\Http\Middleware\AdminRedirectMiddleware::class,
-        'admin' => \App\Http\Middleware\AdminMiddleware::class,
-        'coordinateur' => \App\Http\Middleware\CoordinateurMiddleware::class,
+        // 'dashadminredirect' => \App\Http\Middleware\UserRedirectMiddleware::class,
+        // 'admin.redirect' => \App\Http\Middleware\UserRedirectMiddleware::class,
+        // 'coordinateur.redirect' => \App\Http\Middleware\UserRedirectMiddleware::class,
+        // 'superviseur.redirect' => \App\Http\Middleware\UserRedirectMiddleware::class,
+        // 'operateur.redirect' => \App\Http\Middleware\UserRedirectMiddleware::class,
+        // 'admin' => \App\Http\Middleware\AdminMiddleware::class,
+        // 'coordinateur' => \App\Http\Middleware\CoordinateurMiddleware::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
+        'user.redirect' => \App\Http\Middleware\UserRedirectMiddleware::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
