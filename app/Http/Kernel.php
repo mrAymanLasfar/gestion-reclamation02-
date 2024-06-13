@@ -53,6 +53,9 @@ class Kernel extends HttpKernel
      * @var array<string, class-string|string>
      */
     protected $routeMiddleware = [
+        'admin.redirect' => \App\Http\Middleware\AdminRedirectMiddleware::class,
+        'admin' => \App\Http\Middleware\AdminMiddleware::class,
+        'coordinateur' => \App\Http\Middleware\CoordinateurMiddleware::class,
         // 'dashadminredirect' => \App\Http\Middleware\UserRedirectMiddleware::class,
         // 'admin.redirect' => \App\Http\Middleware\UserRedirectMiddleware::class,
         // 'coordinateur.redirect' => \App\Http\Middleware\UserRedirectMiddleware::class,

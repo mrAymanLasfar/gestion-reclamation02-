@@ -42,7 +42,6 @@ class UserRedirectMiddleware
                 return redirect(RouteServiceProvider::HOME5);
             }
         }
-
         return $next($request);
     }
 
