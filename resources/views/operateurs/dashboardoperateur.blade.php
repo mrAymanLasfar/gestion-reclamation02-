@@ -14,7 +14,7 @@
                     <div>
                         <a href="{{ route('creerreclamation') }}" class="btn btn-primary">Voir les reclamations</a><br>
                         <a href="{{ route('creerconversation') }}" class="btn btn-primary">Voir les conversations</a><br>
-                        {{-- <a href="{{ route('creermessage') }}" class="btn btn-primary">Voir les messages</a> --}}
+                        <a href="{{ route('creermessage') }}" class="btn btn-primary">Voir les messages</a>
                     </div>
                 </div>
             </div>

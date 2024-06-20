@@ -10,6 +10,7 @@ use App\Http\Controllers\OperateurController;
 use App\Http\Controllers\SuperviseurController;
 use App\Http\Controllers\CoordinateurController;
 use App\Http\Controllers\ConversationController;
+use App\Http\Controllers\MessageController;
 use App\Models\User;
 use App\Models\Equipe;
 use App\Models\Coordinateur;
@@ -213,6 +214,24 @@ Route::put('/conversations/{conversation}', [ConversationController::class, 'upd
 Route::delete('/conversations/{conversation}', [ConversationController::class, 'destroy'])->name('conversations.destroy');
 
 Route::get('/creerconversation', [ConversationController::class, 'createConversation'])->name('creerconversation');
+
+
+
+
+
+
+
+
+Route::get('/messages', [MessageController::class, 'index'])->name('messages.index');
+Route::get('/messages/create', [MessageController::class, 'create'])->name('messages.create');
+Route::post('/messages', [MessageController::class, 'store'])->name('messages.store');
+Route::get('/messages/{message}', [MessageController::class, 'show'])->name('messages.show');
+Route::get('/messages/{message}/edit', [MessageController::class, 'edit'])->name('messages.edit');
+Route::put('/messages/{message}', [MessageController::class, 'update'])->name('messages.update');
+Route::delete('/messages/{message}', [MessageController::class, 'destroy'])->name('messages.destroy');
+
+Route::get('/creermessage', [MessageController::class, 'createMessage'])->name('creermessage');
+
 
 
 
