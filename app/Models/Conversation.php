@@ -9,13 +9,32 @@ class Conversation extends Model
 {
     use HasFactory;
 
+
+     		 	 	
+    protected $fillable = [     
+        	 	 	 	 	
+        'id',
+        'nom_equipe',
+        'id_reclamation',
+        'nom_conversations',
+        'created_at',
+        'updated_at',
+    ];
+ 
+    protected $primaryKey = 'id';
+
+    protected $keyType = 'int';
+
+    public $incrementing = true;
+
+
     
 public function reclamation()
 {
     return $this->belongsTo(Reclamation::class, 'id_reclamation');
 }
 
-public function massage()
+public function message()
 {
     return $this->hasMany(Message::class);
 }

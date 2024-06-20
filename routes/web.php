@@ -9,6 +9,7 @@ use App\Http\Controllers\EquipeController;
 use App\Http\Controllers\OperateurController;
 use App\Http\Controllers\SuperviseurController;
 use App\Http\Controllers\CoordinateurController;
+use App\Http\Controllers\ConversationController;
 use App\Models\User;
 use App\Models\Equipe;
 use App\Models\Coordinateur;
@@ -199,6 +200,19 @@ Route::delete('/reclamations/{reclamation}', [ReclamationController::class, 'des
 
 Route::get('/creerreclamation', [ReclamationController::class, 'createReclamation'])->name('creerreclamation');
 
+
+
+
+
+Route::get('/conversations', [ConversationController::class, 'index'])->name('conversations.index');
+Route::get('/conversations/create', [ConversationController::class, 'create'])->name('conversations.create');
+Route::post('/conversations', [ConversationController::class, 'store'])->name('conversations.store');
+Route::get('/conversations/{conversation}', [ConversationController::class, 'show'])->name('conversations.show');
+Route::get('/conversations/{conversation}/edit', [ConversationController::class, 'edit'])->name('conversations.edit');
+Route::put('/conversations/{conversation}', [ConversationController::class, 'update'])->name('conversations.update');
+Route::delete('/conversations/{conversation}', [ConversationController::class, 'destroy'])->name('conversations.destroy');
+
+Route::get('/creerconversation', [ConversationController::class, 'createConversation'])->name('creerconversation');
 
 
 
