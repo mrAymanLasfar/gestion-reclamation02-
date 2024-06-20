@@ -115,17 +115,10 @@ class EquipeController extends Controller
         return view('equipes.show', ['equipe' => $equipe]);
     }
 
-    // public function create()
-    // {
-    //     $coordinateurs = Coordinateur::all();
-
-    //     return view('equipes.create', ['coordinateurs' => $coordinateurs]);
-    // }
-
     public function create()
     {
         // Fetch users who have the 'coordinateur' role
-        $coordinateurRoleId = 12; // Assuming 'coordinateur' role has id 3
+        $coordinateurRoleId = 3; // Assuming 'coordinateur' role has id 3
         $coordinateurs = User::join('model_has_roles', 'users.id', '=', 'model_has_roles.model_id')
                              ->where('model_has_roles.role_id', $coordinateurRoleId)
                              ->where('model_has_roles.model_type', User::class)

@@ -8,16 +8,34 @@ class ReclamationController extends Controller
 {
     public function index()
     {
-         
-         $reclamations = Reclamation::all();
-
+        $reclamations = Reclamation::all();
+        // dd($reclamations);
         return view('reclamations.creerreclamation', compact('reclamations'));
     }
 
+
     public function show(Reclamation $reclamation)
-    {
-        return view('reclamations.show', ['reclamation' => $reclamation]);
-    }
+{
+    return view('reclamations.show', ['reclamation' => $reclamation]);
+}
+
+public function edit(Reclamation $reclamation)
+{
+    return view('reclamations.edit', ['reclamation' => $reclamation]);
+}
+
+public function destroy(Reclamation $reclamation)
+{
+    $reclamation->delete();
+    return redirect()->route('reclamations.index');
+}
+
+
+
+    // public function show(Reclamation $reclamation)
+    // {
+    //     return view('reclamations.show', ['reclamation' => $reclamation]);
+    // }
 
     public function create()
     {
@@ -29,76 +47,50 @@ class ReclamationController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => ['required', 'min:3'],
+            'nom_reclamations' => 'required|min:3',
+        ]); 	
+        Reclamation::create([
+            'nom_reclamations' => $request->nom_reclamations,
         ]);
 
-
-        return redirect()->route('creercoordinateur');
+        return redirect()->route('reclamations.index');
     }
 
 
 
 
-    
 
-    public function edit(Reclamation $reclamation)
-    {
-        return view('coordinateurs.edit', ['coordinateur' => $reclamation]);
-    }
+    // public function edit(Reclamation $reclamation)
+    // {
+    //     return view('reclamations.edit', ['reclamation' => $reclamation]);
+    // }
 
     public function update(Request $request, Reclamation $reclamation)
     {
         $request->validate([
-            'name' => ['required', 'min:3'],
-            'email' => ['required', 'email', 'unique:users,email,' . $reclamation->id],
-            'password' => ['nullable', 'min:6'],
+            'nom_reclamations' => ['required', 'min:3'],
+
         ]);
 
         $reclamation->update([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => $request->password ? bcrypt($request->password) : $reclamation->password,
+            'nom_reclamations' => $request->nom_reclamations,
         ]);
 
-        return redirect()->route('coordinateurs.show', $reclamation->id);
+        return redirect()->route('reclamations.show', $reclamation->id);
     }
 
-    public function destroy(Reclamation $reclamation)
-    {
-        $reclamation->delete();
-        return redirect()->route('coordinateurs.index');
-    }
+    // public function destroy(Reclamation $reclamation)
+    // {
+    //     $reclamation->delete();
+    //     return redirect()->route('coordinateurs.index');
+    // }
 
-    public function createCoordinateur()
+    public function createReclamation()
     {
        
-      $role = Role::where('name', 'coordinateur')->first();
-
-      // Définir la variable $coordinateurs
-      $coordinateurs = [];
-  
-      if ($role) {
-          // Si le rôle existe, récupérez les utilisateurs associés
-          $coordinateurs = $role->users;
-      }
-  
-      // Passer la variable $coordinateurs à la vue
-      return view('admin.creercoordinateur', compact('coordinateurs'));
+        $reclamations = Reclamation::all();
+        return view('reclamations.creerreclamation', compact('reclamations'));
     }
 
-    public function assignRoleToCoordinateur($coordinateurId, $roleName)
-    {
-        $coordinateur = Reclamation::findOrFail($coordinateurId);
-        $coordinateur->assignRole($roleName);
-    }
 
-    public function creeroperateur()
-    {
-        return view('coordinateur.creeroperateur');
-    }
-
-    public function creersuperviseur()
-    {
-        return view('coordinateur.creersuperviseur');
-    }
 }

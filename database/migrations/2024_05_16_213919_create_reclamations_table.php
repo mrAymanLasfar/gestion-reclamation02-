@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('reclamations', function (Blueprint $table) {
-            $table->id('id_reclamation');
+            $table->id();
             $table->timestamps();
 
             

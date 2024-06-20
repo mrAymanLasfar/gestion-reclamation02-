@@ -207,14 +207,6 @@ Route::get('/creerreclamation', [ReclamationController::class, 'createReclamatio
 
 
 
-
-
-
-
-
-
-
-
 Route::prefix('superviseur')->group(function () {
     Route::get('/traiterreclamation', [SuperviseurController::class, 'traiterreclamation']);
 });
@@ -265,17 +257,3 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
