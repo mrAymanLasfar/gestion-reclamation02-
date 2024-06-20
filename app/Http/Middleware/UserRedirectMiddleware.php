@@ -28,22 +28,22 @@ class UserRedirectMiddleware
     {
         $user = Auth::user();
 
-        if ($user) {
-            if ($user->hasRole('admin')) {
-                return redirect(RouteServiceProvider::HOME2);
-            }
-            if ($user->hasRole('coordinateur')) {
-                return redirect(RouteServiceProvider::HOME3);
-            }
-            if ($user->hasRole('superviseur')) {
-                return redirect(RouteServiceProvider::HOME4);
-            }
-            if ($user->hasRole('operateur')) {
-                return redirect(RouteServiceProvider::HOME5);
-            }
-        }
-        return $next($request);
-    }
+        // if ($user) {
+        //     if ($user->hasRole('admin')) {
+        //         return redirect(RouteServiceProvider::HOME2);
+        //     }
+        //     if ($user->hasRole('coordinateur')) {
+        //         return redirect(RouteServiceProvider::HOME3);
+        //     }
+        //     if ($user->hasRole('superviseur')) {
+        //         return redirect(RouteServiceProvider::HOME4);
+        //     }
+        //     if ($user->hasRole('operateur')) {
+        //         return redirect(RouteServiceProvider::HOME5);
+        //     }
+        // }
+        // return $next($request);
+    //}
 
 
 
@@ -69,7 +69,7 @@ class UserRedirectMiddleware
     //         return redirect(RouteServiceProvider::HOME5);
     //     }
     //     return $next($request);
-
+    // }
 
 
 
@@ -77,19 +77,45 @@ class UserRedirectMiddleware
         // if ($user && $user->hasRole('admin')) {
         //     return redirect(RouteServiceProvider::HOME2);
         // } 
-        // if ($user && $user->hasRole('coordinateur')) {
+        // elseif ($user && $user->hasRole('coordinateur')) {
         //     return redirect(RouteServiceProvider::HOME3);
         // }
-        // if ($user && $user->hasRole('superviseur')) {
+        // elseif ($user && $user->hasRole('superviseur')) {
         //     return redirect(RouteServiceProvider::HOME4);
         // }
-        // if ($user && $user->hasRole('operateur')) {
+        // elseif ($user && $user->hasRole('operateur')) {
         //     return redirect(RouteServiceProvider::HOME5);
         // }
-        // return $next($request);
+        // // return $next($request);
+        // else{
+        //     return redirect()->intended(RouteServiceProvider::HOME);
+        // }
+
+
+
+        
+            if ($user && $user->hasRole('admin')) {
+                return redirect(RouteServiceProvider::HOME2);
+            } elseif ($user && $user->hasRole('coordinateur')) {
+                return redirect(RouteServiceProvider::HOME3);
+            } elseif ($user && $user->hasRole('superviseur')) {
+                return redirect(RouteServiceProvider::HOME4);
+            } elseif ($user && $user->hasRole('operateur')) {
+                return redirect(RouteServiceProvider::HOME5);
+            } else {
+                return $next($request);
+            }
+
+    
+
+
+
+
+
+
     }
 
 
 
 
-// }
+}

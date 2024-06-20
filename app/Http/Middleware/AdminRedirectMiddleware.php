@@ -14,14 +14,23 @@ class AdminRedirectMiddleware
 {
     public function handle(Request $request, Closure $next)
     {
-        $user = Auth::user();
+        // $user = Auth::user();
 
-        // Check if the user is authenticated and has the 'admin' role
-        if ($user && $user->hasRole('admin')) {
-            return redirect(RouteServiceProvider::HOME2);
-        }
+        // // Check if the user is authenticated and has the 'admin' role
+        // if ($user && $user->hasRole('admin')) {
+        //     return redirect(RouteServiceProvider::HOME2);
+        // }
+        // if ($user && $user->hasRole('admin')) {
+        //     return redirect(RouteServiceProvider::HOME2);
+        // }
+        // if ($user && $user->hasRole('admin')) {
+        //     return redirect(RouteServiceProvider::HOME2);
+        // }
+        // if ($user && $user->hasRole('admin')) {
+        //     return redirect(RouteServiceProvider::HOME2);
+        // }
 
-        return $next($request);
+        // return $next($request);
     }
 }
 

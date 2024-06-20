@@ -15,6 +15,7 @@ use App\Models\Coordinateur;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 use App\Providers\RouteServiceProvider;
+use App\Http\Controllers\ReclamationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -129,22 +130,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 
 
-// Route::get('/equipes',[EquipeController::class, 'index'])->name('equipes.index');
-
-// Route::get('/equipes/create', [EquipeController::class, 'create'])->name('equipes.create');
-
-// Route::post('/equipes', [EquipeController::class, 'store'])->name('equipes.store');
-
-// Route::get('/equipes/{equipe}', [EquipeController::class, 'show'])->name('equipes.show');
-
-// Route::get('/equipes/{equipe}/edit', [EquipeController::class, 'edit'])->name('equipes.edit');
-
-// Route::put('/equipes/{equipe}', [EquipeController::class, 'update'])->name('equipes.update');
-
-// Route::delete('/equipes/{equipe}',[EquipeController::class, 'destroy'])->name('equipes.destroy');
-
-
-
 Route::get('/equipes', [EquipeController::class, 'index'])->name('equipes.index');
 Route::get('/equipes/create', [EquipeController::class, 'create'])->name('equipes.create');
 Route::post('/equipes', [EquipeController::class, 'store'])->name('equipes.store');
@@ -204,6 +189,41 @@ Route::get('/creersuperviseur', [SuperviseurController::class, 'createSuperviseu
 
 
 
+Route::get('/reclamations', [ReclamationController::class, 'index'])->name('reclamations.index');
+Route::get('/reclamations/create', [ReclamationController::class, 'create'])->name('reclamations.create');
+Route::post('/reclamations', [ReclamationController::class, 'store'])->name('reclamations.store');
+Route::get('/reclamations/{reclamation}', [ReclamationController::class, 'show'])->name('reclamations.show');
+Route::get('/reclamations/{reclamation}/edit', [ReclamationController::class, 'edit'])->name('reclamations.edit');
+Route::put('/reclamations/{reclamation}', [ReclamationController::class, 'update'])->name('reclamations.update');
+Route::delete('/reclamations/{reclamation}', [ReclamationController::class, 'destroy'])->name('reclamations.destroy');
+
+Route::get('/creerreclamation', [ReclamationController::class, 'createReclamation'])->name('creerreclamation');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Route::prefix('superviseur')->group(function () {
+    Route::get('/traiterreclamation', [SuperviseurController::class, 'traiterreclamation']);
+});
+
+
+
+
+
+
 
 
 
@@ -253,55 +273,9 @@ require __DIR__.'/auth.php';
 
 
 
-// Route::prefix('admin')->group(function () {
-//     Route::get('/creercoordinateur', [AdminController::class, 'creercoordinateur']);
-//     Route::get('/creerequipe', [AdminController::class, 'creerequipe']);
-// });
-
-Route::prefix('coordinateur')->group(function () {
-    Route::get('/creeroperateur', [CoordinateurController::class, 'creeroperateur']);
-    Route::get('/creersuperviseur', [CoordinateurController::class, 'creersuperviseur']);
-});
-
-Route::prefix('operateur')->group(function () {
-    Route::get('/creerreclamation', [OperateurController::class, 'creerreclamation']);
-});
-
-Route::prefix('superviseur')->group(function () {
-    Route::get('/traiterreclamation', [SuperviseurController::class, 'traiterreclamation']);
-});
 
 
 
 
-
-
-
-
-
-
-
-
-// Route::get('/creerequipe', [EquipeController::class, 'createEquipe'])->name('creerequipe');
-
-
-
-
-
-// Route::get('/posts',[AdminController::class, 'index'])->name('posts.index');
-
-// Route::get('/posts',[AdminController::class, 'index'])->name('posts.index');
-
-// Route::get('/posts/create', [AdminController::class, 'create'])->name('posts.create');
-
-// Route::post('/posts', [AdminController::class, 'store'])->name('posts.store');
-
-// Route::get('/posts/{post}', [AdminController::class, 'show'])->name('posts.show');
-
-// Route::get('/posts/{post}/edit', [AdminController::class, 'edit'])->name('posts.edit');
-
-// Route::put('/posts/{post}', [AdminController::class, 'update'])->name('posts.update');
-
-// Route::delete('/posts/{post}',[AdminController::class, 'destroy'])->name('posts.destroy');
 
 
