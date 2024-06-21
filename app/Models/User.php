@@ -49,19 +49,19 @@ class User extends Authenticatable
     //     return $this->belongsToMany(Role::class);
     // }
 
-    public function roles()
-    {
-        return $this->morphToMany(Role::class, 'model', 'model_has_roles', 'model_id', 'role_id');
-    }
+    // public function roles()
+    // {
+    //     return $this->morphToMany(Role::class, 'model', 'model_has_roles', 'model_id', 'role_id');
+    // }
 
 
 
-    public function hasRole($role)
-    {
-        // Assuming you have a 'role' column in your users table
-        // Adjust the logic if roles are stored differently (e.g., many-to-many relationship)
-        return $this->role === $role;
-    }
+    // public function hasRole($role)
+    // {
+    //     // Assuming you have a 'role' column in your users table
+    //     // Adjust the logic if roles are stored differently (e.g., many-to-many relationship)
+    //     return $this->role === $role;
+    // }
 
 
     

@@ -9,6 +9,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use App\Models\User;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -62,17 +63,27 @@ public function store(LoginRequest $request): RedirectResponse
 
     $user = Auth::user();
 
+
+    $roleNames = $user->getRoleNames()->first(); 
+    
+
     if ($user->hasRole('admin')) {
-        return redirect(RouteServiceProvider::HOME2);
+        return redirect()->intended(RouteServiceProvider::HOME2);
     } elseif ($user->hasRole('coordinateur')) {
-        return redirect(RouteServiceProvider::HOME3);
+        return redirect()->intended(RouteServiceProvider::HOME3);
     } elseif ($user->hasRole('superviseur')) {
-        return redirect(RouteServiceProvider::HOME4);
+        return redirect()->intended(RouteServiceProvider::HOME4);
     } elseif ($user->hasRole('operateur')) {
-        return redirect(RouteServiceProvider::HOME5);
+        return redirect()->intended(RouteServiceProvider::HOME5);
     } else {
         return redirect()->intended(RouteServiceProvider::HOME);
     }
+    // if($user->hasRole('coordinateur')){
+    //     return dd('dfggg');
+    // }
+    // else{
+    //     return dd('fffff');
+    // }
 }
 
 

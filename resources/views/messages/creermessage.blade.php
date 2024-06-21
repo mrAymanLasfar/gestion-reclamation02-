@@ -6,9 +6,9 @@
         </h2>
     </x-slot>
 
-    <h1>Creer conv</h1>
+    <h1>ecrire les messages</h1>
     <div class="text-center">
-        <a href="{{ route('messages.create') }}" class="btn btn-success">ecrire un messages</a>
+        <a href="{{ route('messages.create') }}" class="btn btn-success">ecrire un message</a>
     </div>
 
 

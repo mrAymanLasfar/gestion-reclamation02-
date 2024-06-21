@@ -9,14 +9,14 @@ class Message extends Model
 {
     use HasFactory;
 
-
-         		 	 	
     protected $fillable = [     
         	 			
         'id',
         'contenu_du_message',
         'id_conversation',
         'nom_conversations',
+        'id_reclamation',
+        'nom_reclamations',
         'created_at',
         'updated_at',
     ];
@@ -26,9 +26,7 @@ class Message extends Model
     protected $keyType = 'int';
 
     public $incrementing = true;
-
-
-
+    
 
     public function conversation()
 {

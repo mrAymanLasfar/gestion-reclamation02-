@@ -94,19 +94,19 @@ class UserRedirectMiddleware
 
 
         
-            if ($user && $user->hasRole('admin')) {
-                return redirect(RouteServiceProvider::HOME2);
-            } elseif ($user && $user->hasRole('coordinateur')) {
-                return redirect(RouteServiceProvider::HOME3);
-            } elseif ($user && $user->hasRole('superviseur')) {
-                return redirect(RouteServiceProvider::HOME4);
-            } elseif ($user && $user->hasRole('operateur')) {
-                return redirect(RouteServiceProvider::HOME5);
-            } else {
-                return $next($request);
-            }
+            // if ($user && $user->hasRole('admin')) {
+            //     return redirect(RouteServiceProvider::HOME2);
+            // } elseif ($user && $user->hasRole('coordinateur')) {
+            //     return redirect(RouteServiceProvider::HOME3);
+            // } elseif ($user && $user->hasRole('superviseur')) {
+            //     return redirect(RouteServiceProvider::HOME4);
+            // } elseif ($user && $user->hasRole('operateur')) {
+            //     return redirect(RouteServiceProvider::HOME5);
+            // } else {
+            //     return $next($request);
+            // }
 
-    
+            return $next($request);
 
 
 

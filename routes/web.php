@@ -11,6 +11,7 @@ use App\Http\Controllers\SuperviseurController;
 use App\Http\Controllers\CoordinateurController;
 use App\Http\Controllers\ConversationController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\MessageCreeController;
 use App\Models\User;
 use App\Models\Equipe;
 use App\Models\Coordinateur;
@@ -66,15 +67,15 @@ use App\Http\Controllers\ReclamationController;
 Route::middleware(['auth', 'user.redirect'])->group(function () {
     Route::get('/dashboardadmin', function () {
         return view('admin.dashboardadmin');
-    })->name('dashboardadmin');
+    })->middleware('permission:dashboardadmin')->name('dashboardadmin');
 
     Route::get('/dashboardcoordinateur', function () {
         return view('coordinateurs.dashboardcoordinateur');
     })->name('dashboardcoordinateur');
 
-    Route::get('/dashboardsuperviseur', function () {
-        return view('superviseurs.dashboardsuperviseur');
-    })->name('dashboardsuperviseur');
+
+
+    Route::get('/dashboardsuperviseur', [MessageCreeController::class, 'dashboardSuperviseur'])->name('dashboardsuperviseur');
 
     Route::get('/dashboardoperateur', function () {
         return view('operateurs.dashboardoperateur');
@@ -156,7 +157,7 @@ Route::delete('/coordinateurs/{coordinateur}', [CoordinateurController::class, '
 
 Route::get('/creercoordinateur', [CoordinateurController::class, 'createCoordinateur'])->name('creercoordinateur');
 
-Route::resource('coordinateurs', CoordinateurController::class);
+// Route::resource('coordinateurs', CoordinateurController::class);
 
 
 
@@ -231,6 +232,18 @@ Route::put('/messages/{message}', [MessageController::class, 'update'])->name('m
 Route::delete('/messages/{message}', [MessageController::class, 'destroy'])->name('messages.destroy');
 
 Route::get('/creermessage', [MessageController::class, 'createMessage'])->name('creermessage');
+
+
+
+
+
+
+
+Route::get('/messagescree', [MessageCreeController::class, 'index'])->name('messagescree.index');
+Route::get('/messagescree/{message}', [MessageCreeController::class, 'show'])->name('messagescree.show');
+Route::delete('/messagescree/{message}', [MessageCreeController::class, 'destroy'])->name('messagescree.destroy');
+
+Route::get('/MessagesCree', [MessageCreeController::class, 'MessagesCree'])->name('MessagesCree');
 
 
 
