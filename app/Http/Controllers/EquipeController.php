@@ -144,7 +144,7 @@ class EquipeController extends Controller
             'id_coordinateur' => $request->id_coordinateur,
         ]);
 
-        return redirect()->route('equipes.index');
+        return redirect()->route('creerequipe');
     }
 
     // public function store(Request $request)

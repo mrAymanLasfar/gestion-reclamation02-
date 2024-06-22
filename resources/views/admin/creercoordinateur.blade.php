@@ -112,10 +112,17 @@
 
 
  <x-layouts.app>
+    <style>
+            .no-underline {
+                text-decoration: none;
+            }
+    </style>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard admin') }}
-        </h2>
+        <a href="{{ route('dashboardadmin') }}" class="no-underline">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                {{ __('Dashboard admin') }}
+            </h2>
+        </a>
     </x-slot>
 
     <h1>Creer Coordinateur</h1>

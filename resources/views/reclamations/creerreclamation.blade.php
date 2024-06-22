@@ -1,10 +1,17 @@
 
 <x-layouts.app>
-    <x-slot name="header">
+    <style>
+        .no-underline {
+            text-decoration: none;
+        }
+</style>
+<x-slot name="header">
+    <a href="{{ route('dashboardoperateur') }}" class="no-underline">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard operateur') }}
         </h2>
-    </x-slot>
+    </a>
+</x-slot>
 
     <h1>Creer reclamations</h1>
     <div class="text-center">
