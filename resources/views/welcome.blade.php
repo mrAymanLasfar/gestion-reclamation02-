@@ -229,7 +229,7 @@
             /* Custom Styles for Buttons */
             .btn {
                 color: white; /* Button text color */
-                background-color: green; /* Button background color */
+                background-color: #e6a500; /* Button background color */
                 padding: 0.5rem 1rem;
                 border-radius: 0.25rem;
                 text-decoration: none;
