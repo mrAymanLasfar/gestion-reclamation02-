@@ -2,12 +2,12 @@
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __(' ----- ') }}
+            {{ __('  Info equipe ') }} {{$equipe->id_equipe}}
         </h2>
     </x-slot>
     <div class="card mt-4">
         <div class="card-header">
-            Equipe Info
+            Equipe Info 
         </div>
         <div class="card-body">
             <h5 class="card-title">id equipe: {{$equipe->id_equipe}}</h5>
