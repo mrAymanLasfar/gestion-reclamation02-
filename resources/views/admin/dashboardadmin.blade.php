@@ -26,6 +26,11 @@
             {{ __('Dashboard admin') }}
         </h2>
     </x-slot>
+    <style>
+        .class1{
+            margin-bottom: 10px ;
+        }
+    </style>
 
     <!-- Your content here -->
     <div class="py-12">
@@ -33,7 +38,8 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <div>
-                        <a href="{{ route('creerequipe') }}" class="btn btn-primary">Voir les Équipe</a> <br>
+                        
+                        <a href="{{ route('creerequipe') }}" class="btn btn-primary class1">Voir les Équipe</a> <br> 
                         <a href="{{ route('creercoordinateur') }}" class="btn btn-primary">Voir les Coordinateur</a>
                     </div>
                 </div>

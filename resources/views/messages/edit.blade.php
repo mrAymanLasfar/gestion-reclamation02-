@@ -11,7 +11,8 @@
         @method('PUT')
         <div class="mb-3">
             <label class="form-label">contenu message</label>
-            <input name="contenu_du_message" type="text" value="{{ $message->contenu_du_message}}" class="form-control">
+            {{-- <input name="contenu_du_message" type="text" value="{{ $message->contenu_du_message}}" class="form-control"> --}}
+            <textarea name="contenu_du_message" class="form-control" value="{{ $message->contenu_du_message}}" rows="2" cols="10">{{ $message->contenu_du_message}}</textarea>
         </div>
         
         <div class="mb-3">
