@@ -127,7 +127,7 @@
 
     <h1>Creer Coordinateur</h1>
     <div class="text-center">
-        <a href="{{ route('coordinateurs.create') }}" class="btn btn-success">Creer Coordinateur</a>
+        <a href="{{ route('coordinateurs.create') }}" class="btn btn-dark">Creer Coordinateur</a>
     </div>
 
     {{-- @if ($coordinateurs->isEmpty())

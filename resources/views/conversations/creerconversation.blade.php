@@ -13,9 +13,9 @@
     </a>
 </x-slot>
 
-    <h1>Creer conv</h1>
+    <h1>Creer une conversation</h1>
     <div class="text-center">
-        <a href="{{ route('conversations.create') }}" class="btn btn-success">Creer conversations</a>
+        <a href="{{ route('conversations.create') }}" class="btn btn-dark">Creer conversations</a>
     </div>
 
 

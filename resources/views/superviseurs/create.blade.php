@@ -20,7 +20,7 @@
     <form method="POST" action="{{ route('superviseurs.store') }}">
         @csrf
         <div class="mb-3">
-            <label class="form-label">Name</label>
+            <label class="form-label">Nom</label>
             <input name="name" type="text" class="form-control" value="{{ old('name') }}">
         </div>
         <div class="mb-3">

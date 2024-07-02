@@ -15,7 +15,7 @@
 
     <h1>Creer operateur</h1>
     <div class="text-center">
-        <a href="{{ route('operateurs.create') }}" class="btn btn-success">Creer operateur</a>
+        <a href="{{ route('operateurs.create') }}" class="btn btn-dark">Creer operateur</a>
     </div>
 
     <table class="table mt-4">

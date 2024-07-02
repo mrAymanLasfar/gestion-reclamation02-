@@ -73,11 +73,11 @@
     <form method="POST" action="{{ route('equipes.store') }}">
         @csrf
         <div class="mb-3">
-            <label class="form-label">id equipe</label>
+            <label class="form-label">Id equipe</label>
             <input name="id_equipe" type="text" class="form-control" value="{{ old('id_equipe') }}">
         </div>
         <div class="mb-3">
-            <label class="form-label">nom equipe</label>
+            <label class="form-label">Nom equipe</label>
             <input name="nom_equipe" type="text" class="form-control" value="{{ old('nom_equipe') }}">
         </div>
         <div class="mb-3">

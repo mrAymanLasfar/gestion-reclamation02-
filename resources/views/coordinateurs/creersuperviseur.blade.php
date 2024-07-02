@@ -15,7 +15,7 @@
 
     <h1>Creer superviseur</h1>
     <div class="text-center">
-        <a href="{{ route('superviseurs.create') }}" class="btn btn-success">Creer superviseur</a>
+        <a href="{{ route('superviseurs.create') }}" class="btn btn-dark">Creer superviseur</a>
     </div>
 
     <table class="table mt-4">

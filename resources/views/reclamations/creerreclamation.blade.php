@@ -13,9 +13,9 @@
     </a>
 </x-slot>
 
-    <h1>Creer reclamations</h1>
+    <h1>Creer une reclamation</h1>
     <div class="text-center">
-        <a href="{{ route('reclamations.create') }}" class="btn btn-success">Creer reclamation</a>
+        <a href="{{ route('reclamations.create') }}" class="btn btn-dark">Creer reclamation</a>
     </div>
 
 

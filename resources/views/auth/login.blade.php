@@ -94,7 +94,7 @@
             margin: 8% auto 0;
             position: relative;
             z-index: 1;
-            border-top: 5px solid #f5ba1a;
+            border-top: 5px solid #000;
             box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
             transform-origin: 50% 0%;
             transform: scale3d(1, 1, 1);
@@ -157,12 +157,12 @@
         .form_wrapper input[type="email"]:focus,
         .form_wrapper input[type="password"]:focus {
             box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
-            border: 1px solid #f5ba1a;
+            border: 1px solid #000;
             background: #fafafa;
         }
 
         .form_wrapper input[type="submit"] {
-            background: #f5ba1a;
+            background: #000;
             height: 35px;
             line-height: 35px;
             width: 100%;
@@ -177,7 +177,7 @@
 
         .form_wrapper input[type="submit"]:hover,
         .form_wrapper input[type="submit"]:focus {
-            background: #e6a500;
+            background: #000;
         }
 
         /* .form_wrapper input[type="checkbox"],
@@ -207,8 +207,8 @@
 }
 
 .form_wrapper input[type="checkbox"]:checked {
-    background-color: #f5ba1a; /* Adjust color as needed */
-    border-color: #f5ba1a; /* Adjust color as needed */
+    background-color: #000; /* Adjust color as needed */
+    border-color: #000; /* Adjust color as needed */
 }
 
 
@@ -239,7 +239,7 @@
             z-index: 1;
             text-align: center;
             padding: 15px;
-            color: #f5ba1a;
+            color: #000;
         }
 
         @keyframes check {
@@ -324,12 +324,12 @@
             text-align: right;
             display: block;
             margin-top: -10px;
-            color: #f5ba1a;
+            color: #000;
             text-decoration: none;
         }
 
         .forgot_password:hover {
-            color: #e6a500;
+            color: #000;
         }
 
         @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
@@ -348,7 +348,7 @@
                 <div class="input_field">
                     <div class="input_container">
                         <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="color: #e6a500;" class="bi bi-envelope" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="color: #000;" class="bi bi-envelope" viewBox="0 0 16 16">
                                 <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm14-1H2a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm-1.446 2.105L8 8.018l-4.554-2.913L1 6.383v4.411l2.853-1.825a.5.5 0 0 1 .549.848L1 12.57V12h14v.57l-2.402-1.531a.5.5 0 1 1 .549-.848L15 10.794V6.383l-1.446-.894z"/>
                             </svg>
                         </div>
@@ -362,7 +362,7 @@
                 <div class="input_field">
                     <div class="input_container">
                         <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="color: #e6a500;" class="bi bi-lock" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="color: #000;" class="bi bi-lock" viewBox="0 0 16 16">
                                 <path d="M8 1a4 4 0 0 0-4 4v3H3.5A1.5 1.5 0 0 0 2 9.5v6A1.5 1.5 0 0 0 3.5 17h9a1.5 1.5 0 0 0 1.5-1.5v-6A1.5 1.5 0 0 0 12.5 8H12V5a4 4 0 0 0-4-4zm-3 5V5a3 3 0 0 1 6 0v3H5z"/>
                             </svg>
                         </div>
@@ -397,7 +397,7 @@
                         </a>
                     @endif
         
-                    <x-primary-button class="ml-3" style="background-color: #e6a500">
+                    <x-primary-button class="ml-3" style="background-color: #000">
                         {{ __('Log in') }}
                     </x-primary-button>
                 </div>

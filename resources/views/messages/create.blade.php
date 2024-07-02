@@ -20,7 +20,7 @@
     <form method="POST" action="{{ route('messages.store') }}">
         @csrf
         <div class="mb-3">
-            <label class="form-label">contenu</label>
+            <label class="form-label">Contenu</label>
             {{-- <input name="contenu_du_message" type="textarea" class="form-control" value="{{ old('contenu_du_message') }}"> --}}
             <textarea name="contenu_du_message" class="form-control" value="{{ old('contenu_du_message') }}" rows="2" cols="10">
                
@@ -28,7 +28,7 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label">conversation</label>
+            <label class="form-label">Conversation</label>
             <select name="id_conversation" class="form-control">
                 @foreach($conversations as $conversation)
                     <option value="{{ $conversation->id }}">{{ $conversation->nom_conversations }}</option>

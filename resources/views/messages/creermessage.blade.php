@@ -15,7 +15,7 @@
 
     <h1>ecrire les messages</h1>
     <div class="text-center">
-        <a href="{{ route('messages.create') }}" class="btn btn-success">ecrire un message</a>
+        <a href="{{ route('messages.create') }}" class="btn btn-dark">Ecrire un message</a>
     </div>
 
 

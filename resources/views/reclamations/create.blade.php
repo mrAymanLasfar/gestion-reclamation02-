@@ -20,7 +20,7 @@
     <form method="POST" action="{{ route('reclamations.store') }}">
         @csrf
         <div class="mb-3">
-            <label class="form-label">Name</label>
+            <label class="form-label">Nom reclamtion</label>
             <input name="nom_reclamations" type="text" class="form-control" value="{{ old('nom_reclamations') }}">
         </div>
         <button class="btn btn-success">Submit</button>

@@ -64,9 +64,9 @@
     </a>
 </x-slot>
 
-
+<h1>Creer Equipe</h1>
     <div class="text-center">
-        <a href="{{ route('equipes.create') }}" class="btn btn-success">Creer equipe</a>
+        <a href="{{ route('equipes.create') }}" class="btn btn-dark">Creer equipe</a>
     </div>
 
     <table class="table mt-4">
