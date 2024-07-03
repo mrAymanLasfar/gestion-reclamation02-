@@ -14,9 +14,9 @@
             <h5 class="card-title">ID superviseur: {{$superviseur->id}}</h5>
             <p class="card-text">Nom superviseur: {{$superviseur->name}}</p>
             <p class="card-text">Email superviseur: {{$superviseur->email}}</p>
-            <p class="card-text">Password superviseur: {{$superviseur->password}}</p>
-            <p class="card-text">Created At: {{$superviseur->created_at ? $superviseur->created_at->format('Y-m-d') : 'Unknown'}}</p>
-            <p class="card-text">Updated At: {{$superviseur->updated_at ? $superviseur->updated_at->format('Y-m-d') : 'Unknown'}}</p>
+            <p class="card-text">Mot de passe superviseur: {{$superviseur->password}}</p>
+            <p class="card-text">Créé à: {{$superviseur->created_at ? $superviseur->created_at->format('Y-m-d') : 'Unknown'}}</p>
+            <p class="card-text">Mis à jour à: {{$superviseur->updated_at ? $superviseur->updated_at->format('Y-m-d') : 'Unknown'}}</p>
         </div>
     </div>
 </x-layouts.app>

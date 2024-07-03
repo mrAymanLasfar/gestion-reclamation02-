@@ -24,6 +24,6 @@
             </select>
         </div>
 
-        <button class="btn btn-secondary">Update</button>
+        <button class="btn btn-secondary"> Mise à jour</button>
     </form>
 </x-layouts.app>

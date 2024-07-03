@@ -299,6 +299,16 @@
                     color: rgb(107 114 128 / var(--tw-text-opacity));
                 }
             }
+            footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            color: #666;
+            z-index: 1000; /* Ensure it's above other content */
+        } 
         </style>
     </head>
     <body class="antialiased">
@@ -315,7 +325,7 @@
                                     <path d="M13 16h-1v-4h-1m1-4h.01M12 6v4m6 10h2a2 2 0 002-2V6a2 2 0 00-2-2h-8a2 2 0 00-2 2v2m0 10H4a2 2 0 01-2-2V10a2 2 0 012-2h8a2 2 0 012 2v2m-6 4h6m-2 4h2m-1-2v2m-4-2h2m-1-2v2"></path>
                                 </svg>
                                 <div class="ml-4 text-lg leading-7 font-semibold">
-                                    <a href="{{ route('login') }}" class="underline text-gray-900 dark:text-white">Login</a>
+                                    <a href="{{ route('login') }}" class="underline text-gray-900 dark:text-white">Connectez-vous</a>
                                 </div>
                             </div>
                         </div>
@@ -325,7 +335,7 @@
                                     <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z"></path>
                                 </svg>
                                 <div class="ml-4 text-lg leading-7 font-semibold">
-                                    <a href="{{ route('register') }}" class="underline text-gray-900 dark:text-white">Register</a>
+                                    <a href="{{ route('register') }}" class="underline text-gray-900 dark:text-white">Inscription</a>
                                 </div>
                             </div>
                         </div>
@@ -333,15 +343,15 @@
                         
                     </div>
                     
-                </div><br><br><br>
-                <footer class="bg-white text-center text-black-50  shadow">
-                    <div class="container">
-                        &copy; {{ date('Y') }} Ayman Lasfar & Yassine Boubkeur. Tous droits réservés.
-                    </div>
-                </footer>
+                </div>
+                
             </div>
             
         </div>
-        
+        <footer class="bg-white text-center text-black-50  shadow">
+            <div class="container">
+                &copy; {{ date('Y') }} Ayman Lasfar & Yassine Boubkeur. Tous droits réservés.
+            </div>
+        </footer>
     </body>
 </html>

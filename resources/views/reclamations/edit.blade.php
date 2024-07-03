@@ -13,6 +13,6 @@
             <label class="form-label">Nom reclamation</label>
             <input name="nom_reclamations" type="text" value="{{ $reclamation->nom_reclamations }}" class="form-control">
         </div>
-        <button class="btn btn-secondary">Update</button>
+        <button class="btn btn-secondary"> Mise à jour</button>
     </form>
 </x-layouts.app>

@@ -17,12 +17,12 @@
 
     <div class="card mt-4">
         <div class="card-header">
-            Equipe Info
+            Equipe Infos
         </div>
         <div class="card-body">
-            <h5 class="card-title">nombre maximal users: {{$equipe->nombre_maximal_users ?? 'not found'}}</h5>
-            <p class="card-text">Created At: {{$equipe->created_at ?? 'not found'}}</p>
-            <p class="card-text">Updated At: {{$equipe->updated_at ?? 'not found'}}</p>
+            <h5 class="card-title">nombre maximal utilisateurs: {{$equipe->nombre_maximal_users ?? 'not found'}}</h5>
+            <p class="card-text">Créé à: {{$equipe->created_at ?? 'not found'}}</p>
+            <p class="card-text">Mis à jour à: {{$equipe->updated_at ?? 'not found'}}</p>
         </div>
     </div>
 </x-layouts.app>

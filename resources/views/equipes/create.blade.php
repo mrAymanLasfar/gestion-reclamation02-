@@ -81,7 +81,7 @@
             <input name="nom_equipe" type="text" class="form-control" value="{{ old('nom_equipe') }}">
         </div>
         <div class="mb-3">
-            <label class="form-label">nombre maximal users</label>
+            <label class="form-label">nombre maximal utilisateurs</label>
             <input name="nombre_maximal_users" type="number" class="form-control" value="{{ old('nombre_maximal_users') }}">
         </div>
         <div class="mb-3">
@@ -92,6 +92,6 @@
                 @endforeach
             </select>
         </div>
-        <button class="btn btn-success">Submit</button>
+        <button class="btn btn-success">Soumettre</button>
     </form>
 </x-layouts.app>

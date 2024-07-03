@@ -331,6 +331,16 @@
         .forgot_password:hover {
             color: #000;
         }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            color: #666;
+            z-index: 1000; /* Ensure it's above other content */
+        }   
 
         @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
     </style>
@@ -340,7 +350,7 @@
     <div class="form_wrapper">
         <div class="form_container">
             <div class="title_container">
-                <h2>Login Form</h2>
+                <h2>Formulaire de connexion</h2>
             </div>
             <form method="POST" action="{{ route('login') }}" class="clearfix">
                 @csrf
@@ -367,7 +377,7 @@
                             </svg>
                         </div>
                         <div class="input">
-                            <x-text-input id="password" class="block mt-1 w-full" placeholder="Password" type="password" name="password" required autocomplete="current-password" />
+                            <x-text-input id="password" class="block mt-1 w-full" placeholder="Mot de passe" type="password" name="password" required autocomplete="current-password" />
                         </div>
                     </div>
                     <x-input-error :messages="$errors->get('password')" class="mt-2" />
@@ -385,7 +395,7 @@
         <div class="block mt-4">
             <label for="remember_me" class="inline-flex items-center">
                 <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                <span class="ml-2 text-sm text-gray-600">{{ __('Souvenez-vous de moi') }}</span>
             </label>
         </div>
 
@@ -393,21 +403,23 @@
                 <div class="flex items-center justify-end mt-4">
                     @if (Route::has('password.request'))
                         <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                            {{ __('Forgot your password?') }}
+                            {{ __('Mot de passe oublie?') }}
                         </a>
                     @endif
         
                     <x-primary-button class="ml-3" style="background-color: #000">
-                        {{ __('Log in') }}
+                        {{ __("S'identifier") }}
                     </x-primary-button>
                 </div>
                 
             </form>
         </div>
+        
     </div>
-    <footer class="bg-white text-center text-black-50  shadow">
-        <div class="container">
-            &copy; {{ date('Y') }} Ayman Lasfar & Yassine Boubkeur. Tous droits réservés.
-        </div>
-    </footer>
+    
 </x-guest-layout> 
+<footer class="bg-white text-center text-black-50  shadow">
+    <div class="container">
+        &copy; {{ date('Y') }} Ayman Lasfar & Yassine Boubkeur. Tous droits réservés.
+    </div>
+</footer>

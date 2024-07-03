@@ -403,7 +403,18 @@
 
 
 
+
 }
+footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            color: #666;
+            z-index: 1000; /* Ensure it's above other content */
+        }
 /* .class1 {
         color: red;
     } */
@@ -416,7 +427,7 @@
     <div class="form_wrapper">
         <div class="form_container">
             <div class="title_container">
-                <h2>Registration Form</h2>
+                <h2>Formulaire d'inscription</h2>
             </div>
             <form method="POST" action="{{ route('register') }}" class="clearfix">
                 @csrf
@@ -430,7 +441,7 @@
                         </svg>
                       </div>
                       <div class="input">
-                          <x-text-input id="name" class="block mt-1 w-full" placeholder="Name" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                          <x-text-input id="name" class="block mt-1 w-full" placeholder="Nom" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
                       </div>
                   </div>
                   <x-input-error :messages="$errors->get('name')" class="mt-2" />
@@ -461,7 +472,7 @@
                       </svg>
                     </div>
                     <div class="input">
-                    <x-text-input id="password" class="block mt-1 w-full" placeholder="Password" type="password" name="password" required autocomplete="new-password" />
+                    <x-text-input id="password" class="block mt-1 w-full" placeholder="Mot de passe" type="password" name="password" required autocomplete="new-password" />
                     </div> </div>
                     <x-input-error :messages="$errors->get('password')" class="mt-2" />
                 </div>
@@ -476,7 +487,7 @@
                       </svg>
                     </div>
                     <div class="input">
-                    <x-text-input id="password_confirmation" placeholder="Confirmer password" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+                    <x-text-input id="password_confirmation" placeholder="Confirmation du mot de passe" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
                   </div> </div>
                     <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                 </div>
@@ -484,20 +495,21 @@
 
                 <div class="flex items-center justify-end mt-4">
                   <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                      {{ __('Already registered?') }}
+                      {{ __('Déjà inscrit?') }}
                   </a>
       
                   <x-primary-button class="ml-4" style="background-color: #000">
-                      {{ __('Register') }}
+                      {{ __('inscription') }}
                   </x-primary-button>
               </div>
 
             </form>
         </div>
     </div>
-    <footer class="bg-white text-center text-black-50  shadow">
-      <div class="container">
-          &copy; {{ date('Y') }} Ayman Lasfar & Yassine Boubkeur. Tous droits réservés.
-      </div>
-  </footer>
+    
 </x-guest-layout>
+<footer class="bg-white text-center text-black-50  shadow">
+  <div class="container">
+      &copy; {{ date('Y') }} Ayman Lasfar & Yassine Boubkeur. Tous droits réservés.
+  </div>
+</footer>

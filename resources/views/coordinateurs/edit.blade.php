@@ -92,9 +92,10 @@
             <input name="email" type="email" value="{{ $coordinateur->email }}" class="form-control">
         </div>
         <div class="mb-3">
-            <label class="form-label">Password Coordinateur</label>
+            <label class="form-label">Mot de passe Coordinateur</label>
             <input name="password" type="password" class="form-control">
         </div>
-        <button class="btn btn-secondary">Update</button>
+        <button class="btn btn-secondary">
+            Mise à jour</button>
     </form>
 </x-layouts.app>

@@ -28,9 +28,9 @@
             <input name="email" type="email" class="form-control" value="{{ old('email') }}">
         </div>
         <div class="mb-3">
-            <label class="form-label">Password</label>
+            <label class="form-label">Mot de passe</label>
             <input name="password" type="password" class="form-control">
         </div>
-        <button class="btn btn-success">Submit</button>
+        <button class="btn btn-success">Soumettre</button>
     </form>
 </x-layouts.app>

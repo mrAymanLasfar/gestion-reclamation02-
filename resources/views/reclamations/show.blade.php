@@ -13,8 +13,8 @@
         <div class="card-body">
             <h5 class="card-title">ID reclamation: {{$reclamation->id}}</h5>
             <p class="card-text">Nom reclamation: {{$reclamation->nom_reclamations}}</p>
-            <p class="card-text">Created At: {{$reclamation->created_at ? $reclamation->created_at->format('Y-m-d') : 'Unknown'}}</p>
-            <p class="card-text">Updated At: {{$reclamation->updated_at ? $reclamation->updated_at->format('Y-m-d') : 'Unknown'}}</p>
+            <p class="card-text">Créé à: {{$reclamation->created_at ? $reclamation->created_at->format('Y-m-d') : 'Unknown'}}</p>
+            <p class="card-text">Mis à jour à: {{$reclamation->updated_at ? $reclamation->updated_at->format('Y-m-d') : 'Unknown'}}</p>
         </div>
     </div>
 </x-layouts.app>

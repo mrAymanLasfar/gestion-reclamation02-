@@ -24,7 +24,8 @@
             <th scope="col">ID</th>
             <th scope="col">Nom operateur</th>
             <th scope="col">Email operateur</th>
-            <th scope="col">Created At</th>
+            <th scope="col">
+                Créé à</th>
             <th scope="col">Options</th>
         </tr>
         </thead>
@@ -36,13 +37,13 @@
                 <td>{{ $operateur->email }}</td>
                 <td>{{ $operateur->created_at ? $operateur->created_at->format('Y-m-d') : 'Unknown' }}</td>
                 <td>
-                    <a href="{{ route('operateurs.show', $operateur->id) }}" class="btn btn-info">View</a>
-                    <a href="{{ route('operateurs.edit', $operateur->id) }}" class="btn btn-secondary">Edit</a>
+                    <a href="{{ route('operateurs.show', $operateur->id) }}" class="btn btn-info">Voir</a>
+                    <a href="{{ route('operateurs.edit', $operateur->id) }}" class="btn btn-secondary">Modifier</a>
 
                     <form style="display: inline;" method="POST" action="{{ route('operateurs.destroy', $operateur->id) }}">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-danger">Supprimer</button>
                     </form>
                 </td>
             </tr>

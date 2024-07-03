@@ -20,7 +20,7 @@
             <input name="nom_equipe" type="text" value="{{$equipe->nom_equipe}}" class="form-control">
         </div>
         <div class="mb-3">
-            <label class="form-label"> nombre maximal users</label>
+            <label class="form-label"> nombre maximal utilisateurs</label>
             <input name="nombre_maximal_users" type="number" value="{{$equipe->nombre_maximal_users}}" class="form-control">
         </div>
         {{-- <div class="mb-3">
@@ -37,7 +37,8 @@
             </select>
         </div> --}}
 
-        <button class="btn btn-secondary">Update</button>
+        <button class="btn btn-secondary">
+            Mise à jour</button>
     </form>
 
 

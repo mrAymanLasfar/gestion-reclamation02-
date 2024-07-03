@@ -74,8 +74,9 @@
         <tr>
             <th scope="col">id_equipe</th>
             <th scope="col">nom equipe</th>
-            <th scope="col">nombre maximal users</th>
-            <th scope="col">created_at</th>
+            <th scope="col">nombre maximal utilisateurs</th>
+            <th scope="col">
+                Créé à</th>
             <th scope="col">options</th>
         </tr>
         </thead>
@@ -87,13 +88,13 @@
                 <td>{{ $equipe->nombre_maximal_users }}</td>
                 <td>{{ $equipe->created_at ? $equipe->created_at->format('Y-m-d') : 'Unknown' }}</td>
                 <td>
-                    <a href="{{ route('equipes.show', $equipe->id_equipe) }}" class="btn btn-info">View</a>
-                    <a href="{{ route('equipes.edit', $equipe->id_equipe) }}" class="btn btn-secondary">Edit</a>
+                    <a href="{{ route('equipes.show', $equipe->id_equipe) }}" class="btn btn-info">Voir</a>
+                    <a href="{{ route('equipes.edit', $equipe->id_equipe) }}" class="btn btn-secondary">Modifier</a>
 
                     <form style="display: inline;" method="POST" action="{{ route('equipes.destroy', $equipe->id_equipe) }}">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-danger">Supprimer</button>
                     </form>
                 </td>
             </tr>

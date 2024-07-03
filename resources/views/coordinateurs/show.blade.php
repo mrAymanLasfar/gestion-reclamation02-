@@ -47,9 +47,9 @@
             <h5 class="card-title">ID Coordinateur: {{$coordinateur->id}}</h5>
             <p class="card-text">Nom Coordinateur: {{$coordinateur->name}}</p>
             <p class="card-text">Email Coordinateur: {{$coordinateur->email}}</p>
-            <p class="card-text">Password Coordinateur: {{$coordinateur->password}}</p>
-            <p class="card-text">Created At: {{$coordinateur->created_at ? $coordinateur->created_at->format('Y-m-d') : 'Unknown'}}</p>
-            <p class="card-text">Updated At: {{$coordinateur->updated_at ? $coordinateur->updated_at->format('Y-m-d') : 'Unknown'}}</p>
+            <p class="card-text">Mot de passe Coordinateur: {{$coordinateur->password}}</p>
+            <p class="card-text">Créé à: {{$coordinateur->created_at ? $coordinateur->created_at->format('Y-m-d') : 'Unknown'}}</p>
+            <p class="card-text">Mis à jour à: {{$coordinateur->updated_at ? $coordinateur->updated_at->format('Y-m-d') : 'Unknown'}}</p>
         </div>
     </div>
 </x-layouts.app>

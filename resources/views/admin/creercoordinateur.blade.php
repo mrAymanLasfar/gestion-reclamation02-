@@ -139,7 +139,8 @@
                     <th scope="col">ID</th>
                     <th scope="col">Nom Coordinateur</th>
                     <th scope="col">Email Coordinateur</th>
-                    <th scope="col">Created At</th>
+                    <th scope="col">
+                        Créé à</th>
                     <th scope="col">Options</th>
                 </tr>
             </thead>
@@ -151,13 +152,13 @@
                         <td>{{ $coordinateur->email }}</td>
                         <td>{{ $coordinateur->created_at ? $coordinateur->created_at->format('Y-m-d') : 'Unknown' }}</td>
                         <td>
-                            <a href="{{ route('coordinateurs.show', $coordinateur->id) }}" class="btn btn-info">View</a>
-                            <a href="{{ route('coordinateurs.edit', $coordinateur->id) }}" class="btn btn-secondary">Edit</a>
+                            <a href="{{ route('coordinateurs.show', $coordinateur->id) }}" class="btn btn-info">Voir</a>
+                            <a href="{{ route('coordinateurs.edit', $coordinateur->id) }}" class="btn btn-secondary">Modifier</a>
 
                             <form style="display: inline;" method="POST" action="{{ route('coordinateurs.destroy', $coordinateur->id) }}">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-danger">Supprimer</button>
                             </form>
                         </td>
                     </tr>

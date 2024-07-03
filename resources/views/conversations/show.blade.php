@@ -14,8 +14,8 @@
             <h5 class="card-title">ID conversation: {{$conversation->id}}</h5>
             <p class="card-text">Nom conversation: {{$conversation->nom_conversations}}</p>
             {{-- <p class="card-text"> appartient au reclamat: {{$conversation->nom_conversations}}</p> --}}
-            <p class="card-text">Created At: {{$conversation->created_at ? $conversation->created_at->format('Y-m-d') : 'Unknown'}}</p>
-            <p class="card-text">Updated At: {{$conversation->updated_at ? $conversation->updated_at->format('Y-m-d') : 'Unknown'}}</p>
+            <p class="card-text">Créé à: {{$conversation->created_at ? $conversation->created_at->format('Y-m-d') : 'Unknown'}}</p>
+            <p class="card-text">Mis à jour à: {{$conversation->updated_at ? $conversation->updated_at->format('Y-m-d') : 'Unknown'}}</p>
         </div>
     </div>
 </x-layouts.app>

@@ -14,9 +14,9 @@
             <h5 class="card-title">ID operateur: {{$operateur->id}}</h5>
             <p class="card-text">Nom operateur: {{$operateur->name}}</p>
             <p class="card-text">Email operateur: {{$operateur->email}}</p>
-            <p class="card-text">Password operateur: {{$operateur->password}}</p>
-            <p class="card-text">Created At: {{$operateur->created_at ? $operateur->created_at->format('Y-m-d') : 'Unknown'}}</p>
-            <p class="card-text">Updated At: {{$operateur->updated_at ? $operateur->updated_at->format('Y-m-d') : 'Unknown'}}</p>
+            <p class="card-text">Mot de passe operateur: {{$operateur->password}}</p>
+            <p class="card-text">Créé à: {{$operateur->created_at ? $operateur->created_at->format('Y-m-d') : 'Unknown'}}</p>
+            <p class="card-text">Mis à jour à: {{$operateur->updated_at ? $operateur->updated_at->format('Y-m-d') : 'Unknown'}}</p>
         </div>
     </div>
 </x-layouts.app>

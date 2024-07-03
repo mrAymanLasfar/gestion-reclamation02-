@@ -32,6 +32,16 @@
               float: none; /* Added */
               margin-bottom: 10px; /* Added */
             }
+            footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            color: #666;
+            z-index: 1000; /* Ensure it's above other content */
+        } 
           </style>
           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 

@@ -24,7 +24,8 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Nom reclamation</th>
-                    <th scope="col">Created At</th>
+                    <th scope="col">
+                        Créé à</th>
                     <th scope="col">Options</th>
                 </tr>
             </thead>
@@ -35,12 +36,12 @@
                         <td>{{ $reclamation->nom_reclamations }}</td>
                         <td>{{ $reclamation->created_at ? $reclamation->created_at->format('Y-m-d') : 'Unknown' }}</td>
                         <td>
-                            <a href="{{ route('reclamations.show', $reclamation->id) }}" class="btn btn-info">View</a>
-                            <a href="{{ route('reclamations.edit', $reclamation->id) }}" class="btn btn-secondary">Edit</a>
+                            <a href="{{ route('reclamations.show', $reclamation->id) }}" class="btn btn-info">Voir</a>
+                            <a href="{{ route('reclamations.edit', $reclamation->id) }}" class="btn btn-secondary">Modifier</a>
                             <form style="display: inline;" method="POST" action="{{ route('reclamations.destroy', $reclamation->id) }}">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-danger">Supprimer</button>
                             </form>
                         </td>
                     </tr>

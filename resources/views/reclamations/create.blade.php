@@ -23,6 +23,6 @@
             <label class="form-label">Nom reclamtion</label>
             <input name="nom_reclamations" type="text" class="form-control" value="{{ old('nom_reclamations') }}">
         </div>
-        <button class="btn btn-success">Submit</button>
+        <button class="btn btn-success">Soumettre</button>
     </form>
 </x-layouts.app>

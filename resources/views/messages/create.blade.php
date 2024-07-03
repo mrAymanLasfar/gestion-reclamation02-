@@ -35,6 +35,6 @@
                 @endforeach
             </select>
         </div>
-        <button class="btn btn-success">Submit</button>
+        <button class="btn btn-success">Soumettre</button>
     </form>
 </x-layouts.app>

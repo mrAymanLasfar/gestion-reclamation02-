@@ -24,7 +24,8 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Nom conversation</th>
-                    <th scope="col">Created At</th>
+                    <th scope="col">
+                        Créé à</th>
                     <th scope="col">Options</th>
                 </tr>
             </thead>
@@ -35,12 +36,12 @@
                         <td>{{ $conversation->nom_conversations }}</td>
                         <td>{{ $conversation->created_at ? $conversation->created_at->format('Y-m-d') : 'Unknown' }}</td>
                         <td>
-                            <a href="{{ route('conversations.show', $conversation->id) }}" class="btn btn-info">View</a>
-                            <a href="{{ route('conversations.edit', $conversation->id) }}" class="btn btn-secondary">Edit</a>
+                            <a href="{{ route('conversations.show', $conversation->id) }}" class="btn btn-info">Voir</a>
+                            <a href="{{ route('conversations.edit', $conversation->id) }}" class="btn btn-secondary">Modifier</a>
                             <form style="display: inline;" method="POST" action="{{ route('conversations.destroy', $conversation->id) }}">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-danger">Supprimer</button>
                             </form>
                         </td>
                     </tr>
