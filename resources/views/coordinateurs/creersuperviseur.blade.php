@@ -37,7 +37,7 @@
                 <td>{{ $superviseur->created_at ? $superviseur->created_at->format('Y-m-d') : 'Unknown' }}</td>
                 <td>
                     <a href="{{ route('superviseurs.show', $superviseur->id) }}" class="btn btn-info">View</a>
-                    <a href="{{ route('superviseurs.edit', $superviseur->id) }}" class="btn btn-primary">Edit</a>
+                    <a href="{{ route('superviseurs.edit', $superviseur->id) }}" class="btn btn-secondary">Edit</a>
 
                     <form style="display: inline;" method="POST" action="{{ route('superviseurs.destroy', $superviseur->id) }}">
                         @csrf

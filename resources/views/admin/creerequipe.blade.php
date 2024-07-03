@@ -88,7 +88,7 @@
                 <td>{{ $equipe->created_at ? $equipe->created_at->format('Y-m-d') : 'Unknown' }}</td>
                 <td>
                     <a href="{{ route('equipes.show', $equipe->id_equipe) }}" class="btn btn-info">View</a>
-                    <a href="{{ route('equipes.edit', $equipe->id_equipe) }}" class="btn btn-primary">Edit</a>
+                    <a href="{{ route('equipes.edit', $equipe->id_equipe) }}" class="btn btn-secondary">Edit</a>
 
                     <form style="display: inline;" method="POST" action="{{ route('equipes.destroy', $equipe->id_equipe) }}">
                         @csrf

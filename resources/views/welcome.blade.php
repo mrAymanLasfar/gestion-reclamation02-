@@ -307,7 +307,7 @@
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
                     <h1 class="text-4xl text-gray-1000 dark:text-dark-400">Gestion de réclamation</h1>
                 </div>
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
+                <div class="mt-8  dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div class="p-6">
                             <div class="flex items-center">
@@ -332,9 +332,16 @@
                         
                         
                     </div>
-                </div>
-               
+                    
+                </div><br><br><br>
+                <footer class="bg-white text-center text-black-50  shadow">
+                    <div class="container">
+                        &copy; {{ date('Y') }} Ayman Lasfar & Yassine Boubkeur. Tous droits réservés.
+                    </div>
+                </footer>
             </div>
+            
         </div>
+        
     </body>
 </html>

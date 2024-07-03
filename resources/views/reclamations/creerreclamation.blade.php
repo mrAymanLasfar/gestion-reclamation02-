@@ -36,7 +36,7 @@
                         <td>{{ $reclamation->created_at ? $reclamation->created_at->format('Y-m-d') : 'Unknown' }}</td>
                         <td>
                             <a href="{{ route('reclamations.show', $reclamation->id) }}" class="btn btn-info">View</a>
-                            <a href="{{ route('reclamations.edit', $reclamation->id) }}" class="btn btn-primary">Edit</a>
+                            <a href="{{ route('reclamations.edit', $reclamation->id) }}" class="btn btn-secondary">Edit</a>
                             <form style="display: inline;" method="POST" action="{{ route('reclamations.destroy', $reclamation->id) }}">
                                 @csrf
                                 @method('DELETE')

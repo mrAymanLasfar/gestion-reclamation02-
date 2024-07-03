@@ -37,7 +37,7 @@
                 <td>{{ $operateur->created_at ? $operateur->created_at->format('Y-m-d') : 'Unknown' }}</td>
                 <td>
                     <a href="{{ route('operateurs.show', $operateur->id) }}" class="btn btn-info">View</a>
-                    <a href="{{ route('operateurs.edit', $operateur->id) }}" class="btn btn-primary">Edit</a>
+                    <a href="{{ route('operateurs.edit', $operateur->id) }}" class="btn btn-secondary">Edit</a>
 
                     <form style="display: inline;" method="POST" action="{{ route('operateurs.destroy', $operateur->id) }}">
                         @csrf

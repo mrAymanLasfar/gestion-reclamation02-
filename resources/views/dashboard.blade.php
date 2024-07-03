@@ -14,4 +14,9 @@
             </div>
         </div>
     </div>
+    <footer class="bg-white text-center text-black-50  shadow">
+        <div class="container">
+            &copy; {{ date('Y') }} Ayman Lasfar & Yassine Boubkeur. Tous droits réservés.
+        </div>
+    </footer>
 </x-app-layout>

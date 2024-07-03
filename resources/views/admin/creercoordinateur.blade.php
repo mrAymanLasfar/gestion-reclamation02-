@@ -152,7 +152,7 @@
                         <td>{{ $coordinateur->created_at ? $coordinateur->created_at->format('Y-m-d') : 'Unknown' }}</td>
                         <td>
                             <a href="{{ route('coordinateurs.show', $coordinateur->id) }}" class="btn btn-info">View</a>
-                            <a href="{{ route('coordinateurs.edit', $coordinateur->id) }}" class="btn btn-primary">Edit</a>
+                            <a href="{{ route('coordinateurs.edit', $coordinateur->id) }}" class="btn btn-secondary">Edit</a>
 
                             <form style="display: inline;" method="POST" action="{{ route('coordinateurs.destroy', $coordinateur->id) }}">
                                 @csrf

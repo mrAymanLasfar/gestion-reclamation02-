@@ -36,7 +36,7 @@
                         <td>{{ $conversation->created_at ? $conversation->created_at->format('Y-m-d') : 'Unknown' }}</td>
                         <td>
                             <a href="{{ route('conversations.show', $conversation->id) }}" class="btn btn-info">View</a>
-                            <a href="{{ route('conversations.edit', $conversation->id) }}" class="btn btn-primary">Edit</a>
+                            <a href="{{ route('conversations.edit', $conversation->id) }}" class="btn btn-secondary">Edit</a>
                             <form style="display: inline;" method="POST" action="{{ route('conversations.destroy', $conversation->id) }}">
                                 @csrf
                                 @method('DELETE')
