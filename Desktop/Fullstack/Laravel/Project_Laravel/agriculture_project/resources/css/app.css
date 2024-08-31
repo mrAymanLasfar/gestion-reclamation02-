@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* resources/css/app.css */
+
+#produitsContainer {
+    display: flex;
+    overflow: hidden; /* Supprime le défilement */
+    /* Vous pouvez ajuster la largeur ou la hauteur selon vos besoins */
+    width: 100%;
+}
+
+
+
+
+
+
+
+#prevBtn {
+    left: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #666;
+    color: white;
+    padding: 15px 20px; /* زيادة حجم الزر */
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-size: 1.5rem; /* زيادة حجم النص داخل الزر */
+    
+}
+#prevBtn:hover{
+    background-color: #444;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+#nextBtn {
+    right: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #666;
+    color: white;
+    padding: 15px 20px; /* زيادة حجم الزر */
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-size: 1.5rem; /* زيادة حجم النص داخل الزر */
+}
+#nextBtn:hover{
+    background-color: #444;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+#produit:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Effet de survol avec ombre */
+    transform: scale(1.05); /* Légère augmentation de la taille pour le survol */
+    z-index: 10; /* Assurez-vous que l'élément est au-dessus des autres éléments */
+}
